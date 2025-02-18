@@ -1,0 +1,43 @@
+/* Animasi Panah */
+.menu-item .child-arrow {
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-block;
+    /* Pastikan panah terlihat */
+    height: 36px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    width: 36px;
+    z-index: 12;
+}
+
+.child-arrow:after,
+.child-arrow:before {
+    background: currentColor;
+    border-radius: 10px;
+    content: "";
+    height: 1px;
+    left: 12px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+    width: 8px;
+    z-index: 9999;
+}
+
+.child-arrow:after {
+    left: 17px;
+    transform: rotate(-45deg);
+}
+
+.toggle-on>.child-arrow:after,
+.toggle-on>.child-arrow:before {
+    left: 10px;
+    width: 15px;
+}
+
+.toggle-on>.child-arrow {
+    transform: rotate(180deg);
+    /* Putar panah saat dropdown terbuka */
+}

@@ -1,0 +1,58 @@
+.menu-item .child-arrow {
+    border-radius: 100%;
+    cursor: pointer;
+    display: none;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+    transition: transform .3s;
+    width: 36px;
+    z-index: 12;
+}
+
+.child-arrow:after,
+.child-arrow:before {
+    background: currentColor;
+    border-radius: 10px;
+    content: "";
+    height: 1px;
+    left: 12px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    transition: transform .3s ease-in-out;
+    width: 8px;
+    z-index: 9999;
+}
+
+.child-arrow:after {
+    left: 17px;
+    transform: rotate(-45deg);
+}
+
+.toggle-on>a .child-arrow:after,
+.toggle-on>a .child-arrow:before {
+    left: 10px;
+    width: 15px;
+}
+
+.toggle-on>a .child-arrow {
+    transform: rotate(180deg);
+}
+
+@media (hover: none) {
+    .menu-item .child-arrow {
+        border-radius: 100%;
+        display: inline-block;
+        margin-left: 7px;
+        margin-top: -17px;
+        padding: 0;
+        right: 5px;
+        top: 50%;
+    }
+
+    #main-nav .toggle-on>a>.child-arrow {
+        background: hsla(0, 0%, 84%, .4);
+    }
+}
