@@ -1,0 +1,17 @@
+{
+    "navbar": {
+        "home": "Beranda",
+        "services": "Layanan",
+        "catalog": "Katalog",
+        "gallery": "Galeri",
+        "about": "Tentang Kami",
+        "contact": "Kontak",
+        "changeLang": "Ubah bahasa",
+        "lightMode": "Mode terang",
+        "darkMode": "Mode gelap",
+        "service": {
+            "procurement": "Pengadaan Barang",
+            "construction": "Jasa Kontruksi"
+        }
+    }
+}
