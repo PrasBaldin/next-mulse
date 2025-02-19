@@ -8,9 +8,6 @@ import MulseSVG from "../assets/img/mulse.svg";
 
 import "./navbar.css";
 
-import IconEN from "../assets/icon/iconEN";
-import IconID from "../assets/icon/iconID";
-
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -41,40 +38,49 @@ const Navbar = () => {
                             <Image src={MulseSVG} alt="img" className="w-12 mr-4" />Mulse Citra Nusa
                         </Link>
 
+                        {/* Menu untuk Desktop */}
                         <div className="hidden lg:flex space-x-6 items-center">
-                            <Link href="/" className="nav-link">
+                            <Link href="/" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 Home
                             </Link>
 
+                            {/* Menu Services dengan Dropdown (Hover di Desktop) */}
                             <div className="relative group" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)} >
-                                <button className="nav-link flex items-center">
+                                <button className="nav-link border-b-2 border-transparent hover:border-blue-500 flex items-center">
                                     Services
                                 </button>
                                 <div className={`bg-white dark:bg-gray-800 absolute top-8 -left-2 w-56 pt-2 p-3 border-2 border-blue-500 shadow-xl rounded-lg overflow-visible transition-all duration-300 ${isDropdownOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"}`} >
-                                    <Link href="/pengadaan-barang" className="nav-link-dropdown" >
+                                    <Link href="/pengadaan-barang" className="nav-link hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-b border-gray-200 hover:border-blue-500 block mt-2 px-2" >
                                         Pengadaan Barang
                                     </Link>
-                                    <Link href="/jasa-konstruksi" className="nav-link-dropdown" >
+                                    <Link href="/jasa-konstruksi" className="nav-link hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-b border-gray-200 hover:border-blue-500 block mt-2 px-2" >
                                         Jasa Konstruksi
                                     </Link>
                                 </div>
                             </div>
-                            <Link href="https://katalog.mulse.id" target="blank" className="nav-link">
+                            <Link href="https://katalog.mulse.id" target="blank" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 Catalog
                             </Link>
-                            <Link href="/gallery" className="nav-link">
+                            <Link href="/gallery" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 Gallery
                             </Link>
-                            <Link href="/about" className="nav-link">
+                            <Link href="/about" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 About
                             </Link>
-                            <Link href="/contact" className="nav-link">
+                            <Link href="/contact" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 Contact
                             </Link>
-                            <button onClick={() => setIsEnglish(!isEnglish)} className="btn font-medium text-gray-700 dark:text-gray-300">
-                                {isEnglish ? <IconEN /> : <IconID />}
+                            {/* Tombol Bahasa */}
+                            <button
+                                onClick={() => setIsEnglish(!isEnglish)}
+                                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors font-medium text-gray-700 dark:text-gray-300"
+                            >
+                                {isEnglish ? 'ID' : 'EN'}
                             </button>
-                            <button onClick={() => setIsDarkMode(!isDarkMode)} className="btn" >
+                            <button
+                                onClick={() => setIsDarkMode(!isDarkMode)}
+                                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                            >
                                 {isDarkMode ? (
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
@@ -139,11 +145,11 @@ const Navbar = () => {
                         Contact
                     </Link>
                     <button onClick={() => setIsEnglish(!isEnglish)} className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" >
-                        <span className="font-medium text-gray-700 dark:text-gray-300">
-                            {isEnglish ? <IconEN /> : <IconID />}
-                        </span>
                         <span className="text-gray-700 dark:text-gray-300">
                             {isEnglish ? 'Change language' : 'Ubah bahasa'}
+                        </span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300">
+                            ({isEnglish ? 'ID' : 'EN'})
                         </span>
                     </button>
                     <button onClick={() => setIsDarkMode(!isDarkMode)} className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
