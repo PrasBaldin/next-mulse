@@ -33,7 +33,7 @@ const Navbar = () => {
                         </Link>
 
                         {/* Menu untuk Desktop */}
-                        <div className="hidden lg:flex space-x-6 items-center">
+                        <div className="hidden md:flex space-x-6 items-center">
                             <Link href="/" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 Home
                             </Link>
@@ -44,15 +44,15 @@ const Navbar = () => {
                                     Services
                                 </button>
                                 <div className={`bg-white dark:bg-gray-800 absolute top-8 -left-2 w-56 pt-2 p-3 border-2 border-blue-500 shadow-xl rounded-lg overflow-visible transition-all duration-300 ${isDropdownOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"}`} >
-                                    <Link href="/pengadaan-barang" className="nav-link hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-b border-gray-200 hover:border-blue-500 block mt-2 px-2" >
+                                    <Link href="/pengadaan-barang" className="nav-link border-b border-gray-200 hover:border-blue-500 block px-2" >
                                         Pengadaan Barang
                                     </Link>
-                                    <Link href="/jasa-konstruksi" className="nav-link hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-b border-gray-200 hover:border-blue-500 block mt-2 px-2" >
+                                    <Link href="/jasa-konstruksi" className="nav-link border-b border-gray-200 hover:border-blue-500 block px-2" >
                                         Jasa Konstruksi
                                     </Link>
                                 </div>
                             </div>
-                            <Link href="https://katalog.mulse.id" target="blank" className="nav-link border-b-2 border-transparent hover:border-blue-500">
+                            <Link href="https://katalog.mulse.id" target="blank" className="nav-link">
                                 Catalog
                             </Link>
                             <Link href="/gallery" className="nav-link border-b-2 border-transparent hover:border-blue-500">
@@ -81,7 +81,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Tombol Menu Mobile */}
-                        <button className="lg:hidden relative w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
+                        <button className="md:hidden relative w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
                             <div className={`hamburger ${isOpen ? "rotate-45 top-1/2 transform -translate-y-1/2" : "top-2"}`} ></div>
                             <div className={`hamburger ${isOpen ? "opacity-0" : "top-1/2 transform -translate-y-1/2"}`} ></div>
                             <div className={`hamburger ${isOpen ? "-rotate-45 bottom-1/2 transform translate-y-1/2" : "bottom-2"}`} ></div>
@@ -91,11 +91,11 @@ const Navbar = () => {
             </nav >
 
             {/* Overlay saat Sidebar terbuka (Hanya di bawah Navbar) */}
-            <div className={`lg:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
+            <div className={`md:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
             } onClick={() => setIsOpen(false)}></div>
 
             {/* Sidebar Menu (Di bawah Navbar) */}
-            < div className={`bg-white dark:bg-gray-800 lg:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
+            < div className={`bg-white dark:bg-gray-800 md:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
                 <div className="p-6 flex flex-col space-y-4">
                     <Link href="/" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
                         Home
@@ -103,32 +103,32 @@ const Navbar = () => {
 
                     {/* Menu Services dengan Dropdown di Sidebar (Klik untuk Buka) */}
                     <div>
-                        <button className="nav-link-mobile flex items-center w-full" onClick={() => setIsDropdownOpen(!isDropdownOpen)} >
+                        <button className="pb-2 border-b border-gray-200 flex items-center text-gray-700 hover:text-blue-500 transition w-full text-left" onClick={() => setIsDropdownOpen(!isDropdownOpen)} >
                             Services
                             <span
-                                className={`dropdown-arrow ${isDropdownOpen ? "rotate-45 absolute right-9 mb-2" : "-rotate-45 absolute right-9"
+                                className={`ml-2 w-3 h-3 border-b-2 border-r-2 border-gray-700 transition-all duration-300 ${isDropdownOpen ? "rotate-45 absolute right-6 mb-2" : "-rotate-45 absolute right-6"
                                     }`}
                             ></span>
                         </button>
                         <div className={`bg-white dark:bg-gray-800 ml-4 space-y-2 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${isDropdownOpen ? "max-h-[500px] opacity-100 p-2 mt-2" : "max-h-0 opacity-0 p-0 mt-0"}`} >
-                            <Link href="/pengadaan-barang" className="nav-link-mobile block" onClick={() => setIsOpen(false)} >
+                            <Link href="/pengadaan-barang" className="pb-2 border-b border-gray-200 block text-gray-700 hover:text-blue-500 transition" onClick={() => setIsOpen(false)} >
                                 Pengadaan Barang
                             </Link>
-                            <Link href="/jasa-konstruksi" className="nav-link-mobile block" onClick={() => setIsOpen(false)} >
+                            <Link href="/jasa-konstruksi" className="pb-2 border-b border-gray-200 block text-gray-700 hover:text-blue-500 transition" onClick={() => setIsOpen(false)} >
                                 Jasa Konstruksi
                             </Link>
                         </div>
                     </div>
-                    <Link href="https://katalog.mulse.id" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                    <Link href="https://katalog.mulse.id" className="pb-2 border-b border-gray-200 text-gray-700 hover:text-blue-500 transition" onClick={() => setIsOpen(false)}>
                         Catalog
                     </Link>
-                    <Link href="/gallery" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                    <Link href="/gallery" className="pb-2 border-b border-gray-200 text-gray-700 hover:text-blue-500 transition" onClick={() => setIsOpen(false)}>
                         Gallery
                     </Link>
-                    <Link href="/about" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                    <Link href="/about" className="pb-2 border-b border-gray-200 text-gray-700 hover:text-blue-500 transition" onClick={() => setIsOpen(false)}>
                         About
                     </Link>
-                    <Link href="/contact" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
+                    <Link href="/contact" className="pb-2 border-b border-gray-200 text-gray-700 hover:text-blue-500 transition" onClick={() => setIsOpen(false)}>
                         Contact
                     </Link>
                     <button onClick={() => setIsDarkMode(!isDarkMode)} className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">

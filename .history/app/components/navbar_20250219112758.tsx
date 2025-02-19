@@ -95,7 +95,7 @@ const Navbar = () => {
             } onClick={() => setIsOpen(false)}></div>
 
             {/* Sidebar Menu (Di bawah Navbar) */}
-            < div className={`bg-white dark:bg-gray-800 lg:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
+            < div className={`bg-white dark:bg-gray-800 md:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
                 <div className="p-6 flex flex-col space-y-4">
                     <Link href="/" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
                         Home

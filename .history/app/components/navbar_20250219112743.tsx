@@ -81,7 +81,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Tombol Menu Mobile */}
-                        <button className="lg:hidden relative w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
+                        <button className="md:hidden relative w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
                             <div className={`hamburger ${isOpen ? "rotate-45 top-1/2 transform -translate-y-1/2" : "top-2"}`} ></div>
                             <div className={`hamburger ${isOpen ? "opacity-0" : "top-1/2 transform -translate-y-1/2"}`} ></div>
                             <div className={`hamburger ${isOpen ? "-rotate-45 bottom-1/2 transform translate-y-1/2" : "bottom-2"}`} ></div>
@@ -91,11 +91,11 @@ const Navbar = () => {
             </nav >
 
             {/* Overlay saat Sidebar terbuka (Hanya di bawah Navbar) */}
-            <div className={`lg:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
+            <div className={`md:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
             } onClick={() => setIsOpen(false)}></div>
 
             {/* Sidebar Menu (Di bawah Navbar) */}
-            < div className={`bg-white dark:bg-gray-800 lg:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
+            < div className={`bg-white dark:bg-gray-800 md:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
                 <div className="p-6 flex flex-col space-y-4">
                     <Link href="/" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
                         Home

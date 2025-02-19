@@ -1,0 +1,5 @@
+.navbar {
+    @apply bg-white dark:bg-gray-800 shadow-md fixed w-full z-50
+}
+
+.nav-link

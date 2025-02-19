@@ -33,7 +33,7 @@ const Navbar = () => {
                         </Link>
 
                         {/* Menu untuk Desktop */}
-                        <div className="hidden lg:flex space-x-6 items-center">
+                        <div className="hidden md:flex space-x-6 items-center">
                             <Link href="/" className="nav-link border-b-2 border-transparent hover:border-blue-500">
                                 Home
                             </Link>
@@ -44,15 +44,15 @@ const Navbar = () => {
                                     Services
                                 </button>
                                 <div className={`bg-white dark:bg-gray-800 absolute top-8 -left-2 w-56 pt-2 p-3 border-2 border-blue-500 shadow-xl rounded-lg overflow-visible transition-all duration-300 ${isDropdownOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"}`} >
-                                    <Link href="/pengadaan-barang" className="nav-link hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-b border-gray-200 hover:border-blue-500 block mt-2 px-2" >
+                                    <Link href="/pengadaan-barang" className="nav-link border-b border-gray-200 hover:border-blue-500 block px-2" >
                                         Pengadaan Barang
                                     </Link>
-                                    <Link href="/jasa-konstruksi" className="nav-link hover:bg-gray-100 dark:hover:bg-gray-700 rounded border-b border-gray-200 hover:border-blue-500 block mt-2 px-2" >
+                                    <Link href="/jasa-konstruksi" className="nav-link border-b border-gray-200 hover:border-blue-500 block px-2" >
                                         Jasa Konstruksi
                                     </Link>
                                 </div>
                             </div>
-                            <Link href="https://katalog.mulse.id" target="blank" className="nav-link border-b-2 border-transparent hover:border-blue-500">
+                            <Link href="https://katalog.mulse.id" target="blank" className="nav-link">
                                 Catalog
                             </Link>
                             <Link href="/gallery" className="nav-link border-b-2 border-transparent hover:border-blue-500">
@@ -81,7 +81,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Tombol Menu Mobile */}
-                        <button className="lg:hidden relative w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
+                        <button className="md:hidden relative w-8 h-8" onClick={() => setIsOpen(!isOpen)}>
                             <div className={`hamburger ${isOpen ? "rotate-45 top-1/2 transform -translate-y-1/2" : "top-2"}`} ></div>
                             <div className={`hamburger ${isOpen ? "opacity-0" : "top-1/2 transform -translate-y-1/2"}`} ></div>
                             <div className={`hamburger ${isOpen ? "-rotate-45 bottom-1/2 transform translate-y-1/2" : "bottom-2"}`} ></div>
@@ -91,11 +91,11 @@ const Navbar = () => {
             </nav >
 
             {/* Overlay saat Sidebar terbuka (Hanya di bawah Navbar) */}
-            <div className={`lg:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
+            <div className={`md:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
             } onClick={() => setIsOpen(false)}></div>
 
             {/* Sidebar Menu (Di bawah Navbar) */}
-            < div className={`bg-white dark:bg-gray-800 lg:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
+            < div className={`bg-white dark:bg-gray-800 md:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
                 <div className="p-6 flex flex-col space-y-4">
                     <Link href="/" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
                         Home
