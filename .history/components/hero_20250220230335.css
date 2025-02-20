@@ -1,0 +1,7 @@
+.hero-wrap {
+    @apply h-[110vh] min-h-[40rem] overflow-hidden
+}
+
+.hero-mask {
+    @apply absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 dark:bg-opacity-50 text-white text-3xl font-bold transition duration-500 ease-in-out
+}

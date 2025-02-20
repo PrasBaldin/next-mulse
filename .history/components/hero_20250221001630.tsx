@@ -56,21 +56,27 @@ export default function Hero() {
 
     const benefitData = [
         {
-            class: "bg-sky-400 dark:bg-sky-800 duration-300 z-[4]",
+            class: "bg-sky-400 dark:bg-sky-800",
+            duration: "duration-300",
+            z: "z-[4]",
             title: "100% Quality",
             description:
                 "Dengan melalui serangkaian proses kontrol kualitas yang ketat, kami memastikan setiap detail diperhatikan demi kepuasan Anda.",
             Icon: IconStar,
         },
         {
-            class: "bg-sky-300 dark:bg-sky-700 duration-500 z-[3]",
+            bg: "bg-sky-300 dark:bg-sky-700",
+            duration: "duration-500",
+            z: "z-[3]",
             title: "Qualified Team",
             description:
                 "Dengan kombinasi pengetahuan yang mendalam dan dedikasi tinggi, kami siap memberikan solusi terbaik untuk kebutuhan Anda.",
             Icon: IconTeam,
         },
         {
-            class: "bg-sky-200 dark:bg-sky-600 duration-700 z-[2]",
+            bg: "bg-sky-200 dark:bg-sky-600",
+            duration: "duration-700",
+            z: "z-[2]",
             title: "Guaranteed",
             description:
                 "Jika Anda merasa tidak puas, kami siap memberikan solusi atau pengembalian dana sesuai ketentuan yang berlaku.",

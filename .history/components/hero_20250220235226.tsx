@@ -12,11 +12,11 @@ export default function Hero() {
     const parallaxRef = useRef<HTMLDivElement>(null);
     const translateThreshold = 350;
 
-    const benefitRef1 = useRef<HTMLDivElement>(null);
-    const benefitRef2 = useRef<HTMLDivElement>(null);
-    const benefitRef3 = useRef<HTMLDivElement>(null);
-
-    const benefitRefs = [benefitRef1, benefitRef2, benefitRef3];
+    // Gunakan useMemo untuk menyimpan array refs agar tidak dideklarasikan ulang di setiap render
+    const benefitRefs = useMemo(
+        () => [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)],
+        []
+    );
 
     useEffect(() => {
         let ticking = false;
@@ -56,21 +56,27 @@ export default function Hero() {
 
     const benefitData = [
         {
-            class: "bg-sky-400 dark:bg-sky-800 duration-300 z-[4]",
+            bg: "bg-sky-400 dark:bg-sky-800",
+            duration: "duration-300",
+            z: "z-[4]",
             title: "100% Quality",
             description:
                 "Dengan melalui serangkaian proses kontrol kualitas yang ketat, kami memastikan setiap detail diperhatikan demi kepuasan Anda.",
             Icon: IconStar,
         },
         {
-            class: "bg-sky-300 dark:bg-sky-700 duration-500 z-[3]",
+            bg: "bg-sky-300 dark:bg-sky-700",
+            duration: "duration-500",
+            z: "z-[3]",
             title: "Qualified Team",
             description:
                 "Dengan kombinasi pengetahuan yang mendalam dan dedikasi tinggi, kami siap memberikan solusi terbaik untuk kebutuhan Anda.",
             Icon: IconTeam,
         },
         {
-            class: "bg-sky-200 dark:bg-sky-600 duration-700 z-[2]",
+            bg: "bg-sky-200 dark:bg-sky-600",
+            duration: "duration-700",
+            z: "z-[2]",
             title: "Guaranteed",
             description:
                 "Jika Anda merasa tidak puas, kami siap memberikan solusi atau pengembalian dana sesuai ketentuan yang berlaku.",
@@ -100,17 +106,16 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            <div className="benefit-section">
+            <div className="max-w-full md:max-w-[85rem] mx-auto md:absolute top-[100vh]">
                 <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-7">
                     <div className="bg-sky-400 dark:bg-sky-800 transition duration-300 ease-in-out p-6 hidden xl:block xl:col-span-1 z-[5]" />
                     {benefitRefs.map((ref, index) => {
-                        const IconComponent = benefitData[index].Icon;
                         const initialTranslate = 1000 * (index + 1);
                         return (
-                            <div key={index} ref={ref} className={`benefit-card ${benefitData[index].class}`} style={{ transform: `translateX(-${initialTranslate}px)` }}>
+                            <div key={index} ref={ref} className="bg-sky-400 dark:bg-sky-800 transition transform duration-300 ease-in-out p-6 xl:col-span-2 z-[4]" style={{ transform: `translateX(-${initialTranslate}px)` }}>
                                 <div className="flex items-center">
                                     <div className="text-center mb-4 px-[2rem]">
-                                        <IconComponent />
+                                        <benefitData[index].Icon />
                                     </div>
                                     <div>
                                         <h2 className="text-xl font-semibold text-sky-900 dark:text-gray-100 transition duration-300 ease-in-out">
@@ -121,11 +126,38 @@ export default function Hero() {
                                         </p>
                                     </div>
                                 </div>
+                                <div className="mt-2">{index + 1}</div>
                             </div>
-                        );
-                    })}
+
+                            // <div key={index} ref={ref} className="bg-sky-300 dark:bg-sky-700 transition duration-500 ease-in-out translate-x-[-2000 * (index + 1)px] p-6 xl:col-span-2 z-[3]">
+                            //     <div className="flex items-center">
+                            //         <div className="mb-4 px-[2rem]">
+                            //             <IconTeam />
+                            //         </div>
+                            //         <div>
+                            //             <h2 className="text-xl font-semibold text-sky-900 dark:text-gray-100 transition duration-500 ease-in-out">Qualified Team</h2>
+                            //             <p className="text-gray-700 dark:text-gray-100 mt-2 transition duration-500 ease-in-out">Dengan kombinasi pengetahuan yang mendalam dan dedikasi tinggi, kami siap memberikan solusi terbaik untuk kebutuhan Anda.</p>
+                            //         </div>
+                            //     </div>
+                            //     {index + 1}
+                            // </div>
+
+                            // <div key={index} ref={ref} className="bg-sky-200 dark:bg-sky-600 transition duration-700 ease-in-out translate-x-[-3000 * (index + 1)px] p-6 xl:col-span-2 z-[2]">
+                            //     <div className="flex items-center">
+                            //         <div className="mb-4 px-[2rem]">
+                            //             <IconThumbUp />
+                            //         </div>
+                            //         <div>
+                            //             <h2 className="text-xl font-semibold text-sky-900 dark:text-gray-100 transition duration-700 ease-in-out">Guaranteed</h2>
+                            //             <p className="text-gray-700 dark:text-gray-100 mt-2 transition duration-700 ease-in-out">Jika Anda merasa tidak puas, kami siap memberikan solusi atau pengembalian dana sesuai ketentuan yang berlaku.</p>
+                            //         </div>
+                            //     </div>
+                            //     {index + 1}
+                            // </div>
+                        )
+                    )}
                 </div>
-            </div >
+            </div>
         </>
     );
 }
