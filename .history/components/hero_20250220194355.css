@@ -1,0 +1,3 @@
+.hero-wrap {
+    @apply h-screen overflow-hidden
+}
