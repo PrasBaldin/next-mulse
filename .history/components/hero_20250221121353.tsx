@@ -25,7 +25,6 @@ export default function Hero() {
     const parallaxRef = useRef<HTMLDivElement>(null);
     const images = ["/img/parallax-1.webp", "/img/parallax-2.webp"];
     const [currentIndex, setCurrentIndex] = useState(0);
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     // Data konten slide sesuai gambar
     const slideContent = [
@@ -95,6 +94,11 @@ export default function Hero() {
         startInterval();
     };
 
+    // Navigasi manual dengan tombol bulat
+    const handleNavigation = (index: number) => {
+        setCurrentIndex(index);
+    };
+
     return (
         <>
             <div className="hero-wrap relative">
@@ -133,17 +137,15 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative">
-                        <div className="absolute bottom-[20vh] right-0 md:bottom-[50vh] md:right-0 flex md:flex-col space-x-2 md:space-x-0">
-                            {images.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => handleNavigation(index)}
-                                    className={`w-3 h-3 rounded-full transition duration-500 ease-in-out my-1 ${index === currentIndex ? "bg-sky-500" : "bg-gray-300"
-                                        }`}
-                                />
-                            ))}
-                        </div>
+                    <div className="absolute top-[95vh] right-5 flex space-x-2">
+                        {images.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handleNavigation(index)}
+                                className={`w-3 h-3 rounded-full transition duration-500 ease-in-out ${index === currentIndex ? "bg-sky-500" : "bg-gray-300"
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

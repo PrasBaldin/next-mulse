@@ -133,17 +133,15 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative">
-                        <div className="absolute bottom-[20vh] right-0 md:bottom-[50vh] md:right-0 flex md:flex-col space-x-2 md:space-x-0">
-                            {images.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => handleNavigation(index)}
-                                    className={`w-3 h-3 rounded-full transition duration-500 ease-in-out my-1 ${index === currentIndex ? "bg-sky-500" : "bg-gray-300"
-                                        }`}
-                                />
-                            ))}
-                        </div>
+                    <div className="absolute top-[50vh] right-0 flex flex-col">
+                        {images.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handleNavigation(index)}
+                                className={`w-3 h-3 rounded-full transition duration-500 ease-in-out my-1 ${index === currentIndex ? "bg-sky-500" : "bg-gray-300"
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

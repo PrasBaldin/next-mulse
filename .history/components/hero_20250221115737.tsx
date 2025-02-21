@@ -4,7 +4,7 @@ import "./hero.css";
 import HeroBenefitSection from "./heroBenefitSection";
 
 // Komponen Typewriter untuk efek pengetikan
-function Typewriter({ text, speed = 10, className = "" }) {
+function Typewriter({ text, speed = 150, className = "" }) {
     const [displayText, setDisplayText] = useState("");
 
     useEffect(() => {
@@ -25,19 +25,18 @@ export default function Hero() {
     const parallaxRef = useRef<HTMLDivElement>(null);
     const images = ["/img/parallax-1.webp", "/img/parallax-2.webp"];
     const [currentIndex, setCurrentIndex] = useState(0);
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     // Data konten slide sesuai gambar
     const slideContent = [
         {
-            title: "   Jasa Kontruksi",
+            title: "Jasa Kontruksi",
             description:
-                "   Solusi konstruksi berkualitas yang memenuhi standar industri terbaik, didukung oleh tim profesional berpengalaman yang menangani proyek-proyek besar.",
+                "Solusi konstruksi berkualitas yang memenuhi standar industri terbaik, didukung oleh tim profesional berpengalaman yang menangani proyek-proyek besar.",
         },
         {
-            title: "   Pengadaan Barang",
+            title: "Pengadaan Barang",
             description:
-                "   Layanan pengadaan barang yang efisien dan terpercaya, memastikan kualitas produk serta memenuhi kebutuhan bisnis Anda dengan harga yang kompetitif.",
+                "Layanan pengadaan barang yang efisien dan terpercaya, memastikan kualitas produk serta memenuhi kebutuhan bisnis Anda dengan harga yang kompetitif.",
         },
     ];
 
@@ -71,28 +70,17 @@ export default function Hero() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Fungsi untuk memulai interval auto slide
-    const startInterval = () => {
-        intervalRef.current = setInterval(() => {
+    // Auto slide: Ganti gambar setiap 7.5 detik
+    useEffect(() => {
+        const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % images.length);
         }, 7500);
-    };
-
-    // Mulai interval auto slide saat komponen di-mount
-    useEffect(() => {
-        startInterval();
-        return () => {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
+        return () => clearInterval(interval);
     }, [images.length]);
 
-    // Navigasi manual: ketika tombol diklik, ganti gambar aktif dan reset interval
+    // Navigasi manual dengan tombol bulat
     const handleNavigation = (index: number) => {
         setCurrentIndex(index);
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-        }
-        startInterval();
     };
 
     return (
@@ -133,17 +121,15 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
-                    <div className="relative">
-                        <div className="absolute bottom-[20vh] right-0 md:bottom-[50vh] md:right-0 flex md:flex-col space-x-2 md:space-x-0">
-                            {images.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => handleNavigation(index)}
-                                    className={`w-3 h-3 rounded-full transition duration-500 ease-in-out my-1 ${index === currentIndex ? "bg-sky-500" : "bg-gray-300"
-                                        }`}
-                                />
-                            ))}
-                        </div>
+                    <div className="absolute top-[95vh] right-5 flex space-x-2">
+                        {images.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handleNavigation(index)}
+                                className={`w-3 h-3 rounded-full transition duration-500 ease-in-out ${index === currentIndex ? "bg-sky-500" : "bg-gray-300"
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

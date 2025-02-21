@@ -134,7 +134,7 @@ export default function Hero() {
                         </div>
                     </div>
                     <div className="relative">
-                        <div className="absolute bottom-[20vh] right-0 md:bottom-[50vh] md:right-0 flex md:flex-col space-x-2 md:space-x-0">
+                        <div className="absolute bottom-[-50vh] right-0 flex flex-col">
                             {images.map((_, index) => (
                                 <button
                                     key={index}
