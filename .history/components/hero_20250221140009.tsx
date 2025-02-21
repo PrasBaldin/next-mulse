@@ -4,39 +4,19 @@ import "./hero.css";
 import HeroBenefitSection from "./heroBenefitSection";
 
 // Komponen Typewriter untuk efek pengetikan
-function Typewriter({ text, speed = 10, className = "", delay = 0 }) {
+function Typewriter({ text, speed = 10, className = "" }) {
     const [displayText, setDisplayText] = useState("");
-    const indexRef = useRef(0);
-
-    // useEffect(() => {
-    //     let index = 0;
-    //     setDisplayText("");
-    //     const intervalId = setInterval(() => {
-    //         setDisplayText((prev) => prev + text.charAt(index));
-    //         index++;
-    //         if (index >= text.length) clearInterval(intervalId);
-    //     }, speed);
-    //     return () => clearInterval(intervalId);
-    //     const timeoutId = setTimeout(delay);
-    //     return () => clearTimeout(timeoutId);
-    // }, [text, speed, delay]);
 
     useEffect(() => {
+        let index = 0;
         setDisplayText("");
-        indexRef.current = 0; // Reset index setiap kali teks atau kecepatan berubah
-
-        const startTyping = () => {
-            const intervalId = setInterval(() => {
-                setDisplayText((prev) => prev + text.charAt(indexRef.current));
-                indexRef.current++;
-                if (indexRef.current >= text.length) clearInterval(intervalId);
-            }, speed);
-            return () => clearInterval(intervalId);
-        };
-
-        const timeoutId = setTimeout(startTyping, delay);
-        return () => clearTimeout(timeoutId);
-    }, [text, speed, delay]);
+        const intervalId = setInterval(() => {
+            setDisplayText((prev) => prev + text.charAt(index));
+            index++;
+            if (index >= text.length) clearInterval(intervalId);
+        }, speed);
+        return () => clearInterval(intervalId);
+    }, [text, speed]);
 
     return <span className={className}>{displayText}</span>;
 }
@@ -141,7 +121,7 @@ export default function Hero() {
                                 <Typewriter text={slideContent[currentIndex].title} speed={50} />
                             </h1>
                             <p className="md:text-xl font-medium">
-                                <Typewriter text={slideContent[currentIndex].description} speed={10} delay={500} />
+                                <Typewriter text={slideContent[currentIndex].description} speed={10} delay={100} />
                             </p>
                             <div className="pt-5">
                                 <button className="btn bg-sky-600 hover:bg-sky-700 dark:hover:bg-sky-700 text-gray-100 font-medium">

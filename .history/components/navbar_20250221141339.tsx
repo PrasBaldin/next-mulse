@@ -81,11 +81,11 @@ const Navbar = () => {
             </nav >
 
             {/* Overlay Sidebar */}
-            <div className={`lg:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-500 ease-in-out z-[9] ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
+            <div className={`lg:hidden fixed top-16 left-0 w-full h-full bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-[9] ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`
             } onClick={() => setIsOpen(false)}></div>
 
             {/* Sidebar Menu */}
-            < div className={`bg-white dark:bg-gray-800 lg:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-500 ease-in-out z-10 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
+            < div className={`bg-white dark:bg-gray-800 lg:hidden fixed top-16 right-0 w-64 h-full shadow-lg transform transition-transform duration-300 z-10 ${isOpen ? "translate-x-0" : "translate-x-full"}`}  >
                 <div className="p-6 flex flex-col space-y-4">
                     <Link href="/" className="nav-link-mobile" onClick={() => setIsOpen(false)}>
                         {("navbar.home")}
@@ -96,7 +96,7 @@ const Navbar = () => {
                             {("navbar.services")}
                             <span className={`dropdown-arrow ${isDropdownOpen ? "rotate-45 absolute right-9 mb-2" : "-rotate-45 absolute right-9"}`} ></span>
                         </button>
-                        <div className={`bg-white dark:bg-gray-800 ml-4 space-y-2 rounded-lg overflow-hidden transition-all duration-500 ease-in-out ${isDropdownOpen ? "max-h-[500px] opacity-100 p-2 mt-2" : "max-h-0 opacity-0 p-0 mt-0"}`} >
+                        <div className={`bg-white dark:bg-gray-800 ml-4 space-y-2 rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${isDropdownOpen ? "max-h-[500px] opacity-100 p-2 mt-2" : "max-h-0 opacity-0 p-0 mt-0"}`} >
                             <Link href="/pengadaan-barang" className="nav-link-mobile block" onClick={() => setIsOpen(false)} >
                                 {("navbar.service.procurement")}
                             </Link>

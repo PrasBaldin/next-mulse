@@ -7,10 +7,10 @@ const AboutPage = () => {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: "url('/img/about-bg-1.webp')" }}
                 >
-                    <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-90 transition duration-500 ease-in-out" />
+                    <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-80 transition duration-500 ease-in-out" />
                 </div>
                 {/* Konten */}
-                <div className="container relative z-[2] pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[6rem]">
+                <div className="container relative z-10 pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[6rem]">
                     <div className="flex flex-col lg:flex-row items-center">
                         {/* Kolom gambar */}
                         <div className="w-full lg:w-1/2 p-4 max-h-[500px] overflow-hidden">
@@ -21,7 +21,7 @@ const AboutPage = () => {
                             />
                         </div>
                         {/* Kolom deskripsi */}
-                        <div className="w-full lg:w-1/2 p-4 text-gray-700 dark:text-gray-100 transition duration-500 ease-in-out">
+                        <div className="w-full lg:w-1/2 p-4">
                             <h1 className="text-3xl font-bold mb-4">Solusi Konstruksi &amp; Pengadaan Barang</h1>
                             <p className="mb-4">
                                 Kami adalah perusahaan yang mengintegrasikan layanan konstruksi terdepan dengan solusi pengadaan barang berkualitas tinggi untuk setiap proyek Anda.

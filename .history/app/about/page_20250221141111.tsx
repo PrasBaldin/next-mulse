@@ -7,10 +7,10 @@ const AboutPage = () => {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: "url('/img/about-bg-1.webp')" }}
                 >
-                    <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-90 transition duration-500 ease-in-out" />
+                    <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-80 transition duration-500 ease-in-out" />
                 </div>
                 {/* Konten */}
-                <div className="container relative z-[2] pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[6rem]">
+                <div className="container relative z-10 pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[6rem]">
                     <div className="flex flex-col lg:flex-row items-center">
                         {/* Kolom gambar */}
                         <div className="w-full lg:w-1/2 p-4 max-h-[500px] overflow-hidden">

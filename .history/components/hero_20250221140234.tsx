@@ -17,7 +17,7 @@ function Typewriter({ text, speed = 10, className = "", delay = 0 }) {
     //         if (index >= text.length) clearInterval(intervalId);
     //     }, speed);
     //     return () => clearInterval(intervalId);
-    //     const timeoutId = setTimeout(delay);
+    //     const timeoutId = setTimeout(startTyping, delay);
     //     return () => clearTimeout(timeoutId);
     // }, [text, speed, delay]);
 
@@ -141,7 +141,7 @@ export default function Hero() {
                                 <Typewriter text={slideContent[currentIndex].title} speed={50} />
                             </h1>
                             <p className="md:text-xl font-medium">
-                                <Typewriter text={slideContent[currentIndex].description} speed={10} delay={500} />
+                                <Typewriter text={slideContent[currentIndex].description} speed={10} delay={100} />
                             </p>
                             <div className="pt-5">
                                 <button className="btn bg-sky-600 hover:bg-sky-700 dark:hover:bg-sky-700 text-gray-100 font-medium">
