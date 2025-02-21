@@ -104,7 +104,7 @@ export default function Hero() {
                                 <Typewriter text={slideContent[currentIndex].title} speed={50} />
                             </h1>
                             <p className="md:text-xl font-medium">
-                                <Typewriter text={slideContent[currentIndex].description} speed={1} delay={250} />
+                                <Typewriter text={slideContent[currentIndex].description} speed={1} delay={500} />
                             </p>
                             <div className="pt-5">
                                 <button className="btn bg-sky-600 hover:bg-sky-700 dark:hover:bg-sky-700 text-gray-100 font-medium">

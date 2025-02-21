@@ -2,7 +2,51 @@
 import { useEffect, useRef, useState } from "react";
 import "./hero.css";
 import HeroBenefitSection from "./heroBenefitSection";
-import Typewriter from "./heroTypewriter";
+
+// Komponen Typewriter untuk efek pengetikan
+function Typewriter({ text, speed = 10, className = "", delay = 0 }) {
+    const [displayText, setDisplayText] = useState("");
+    const indexRef = useRef(0);
+
+    useEffect(() => {
+        setDisplayText("");
+        indexRef.current = 0;
+
+        let animationFrameId;
+        let lastTime = performance.now();
+
+        const update = (now) => {
+            // Hanya update jika tab aktif
+            if (document.visibilityState === "hidden") {
+                animationFrameId = requestAnimationFrame(update);
+                return;
+            }
+
+            if (now - lastTime >= speed) {
+                setDisplayText((prev) => prev + text.charAt(indexRef.current));
+                indexRef.current++;
+                lastTime = now;
+            }
+
+            if (indexRef.current < text.length) {
+                animationFrameId = requestAnimationFrame(update);
+            }
+        };
+
+        const timeoutId = setTimeout(() => {
+            animationFrameId = requestAnimationFrame(update);
+        }, delay);
+
+        return () => {
+            clearTimeout(timeoutId);
+            cancelAnimationFrame(animationFrameId);
+        };
+    }, [text, speed, delay]);
+
+    return <span className={className}>{displayText}</span>;
+}
+
+export default Typewriter;
 
 export default function Hero() {
     const parallaxRef = useRef<HTMLDivElement>(null);
@@ -104,7 +148,7 @@ export default function Hero() {
                                 <Typewriter text={slideContent[currentIndex].title} speed={50} />
                             </h1>
                             <p className="md:text-xl font-medium">
-                                <Typewriter text={slideContent[currentIndex].description} speed={1} delay={250} />
+                                <Typewriter text={slideContent[currentIndex].description} speed={10} delay={500} />
                             </p>
                             <div className="pt-5">
                                 <button className="btn bg-sky-600 hover:bg-sky-700 dark:hover:bg-sky-700 text-gray-100 font-medium">
