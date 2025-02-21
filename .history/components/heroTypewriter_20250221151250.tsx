@@ -10,7 +10,7 @@ interface TypewriterProps {
 
 export default function Typewriter({
     text,
-    speed = 5,
+    speed = 1,
     className = "",
     delay = 0,
 }: TypewriterProps) {
