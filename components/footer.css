@@ -1,0 +1,7 @@
+footer table tr a {
+    @apply transition duration-300
+}
+
+footer table tr:hover a {
+    @apply text-sky-400
+}

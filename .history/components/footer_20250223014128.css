@@ -1,0 +1,8 @@
+/* Toggle Dark Mode Footer */
+footer .btn {
+    @apply hover:bg-gray-600
+}
+
+footer .toggle-dark-mode path {
+    @apply text-white
+}

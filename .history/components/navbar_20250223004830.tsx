@@ -34,7 +34,7 @@ const Navbar = () => {
                 <div className="container">
                     <div className="flex justify-between items-center">
                         <Link href="/" className="text-2xl font-bold text-sky-500 dark:text-gray-100 flex items-center transition duration-500 ease-in-out py-3">
-                            <Image src={MulseSvg} alt="img" className="w-12 mr-4" />Mulse Citra Nusa
+                            <Image src={MulseSVG} alt="img" className="w-12 mr-4" />Mulse Citra Nusa
                         </Link>
 
                         <div className="hidden lg:flex space-x-6 items-center">

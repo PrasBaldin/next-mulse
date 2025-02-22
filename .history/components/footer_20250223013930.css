@@ -1,0 +1,3 @@
+footer .toggle-dark-mode path {
+    @apply text-white
+}
