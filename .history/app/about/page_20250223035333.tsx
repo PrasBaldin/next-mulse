@@ -11,7 +11,11 @@ const AboutPage = () => {
                     <div className="flex flex-col lg:flex-row items-center">
                         {/* Kolom gambar */}
                         <div className="w-full lg:w-1/2 p-4 max-h-[500px] overflow-hidden">
-                            <img src="/img/about-profile.webp" alt="About image" className="rounded shadow h-[500px] w-full" />
+                            <img
+                                src="/img/about-profile.webp"
+                                alt="About image"
+                                className="rounded shadow h-[500px] w-full"
+                            />
                         </div>
                         {/* Kolom deskripsi */}
                         <div className="w-full lg:w-1/2 p-4 text-gray-700 dark:text-gray-100 transition duration-500 ease-in-out">

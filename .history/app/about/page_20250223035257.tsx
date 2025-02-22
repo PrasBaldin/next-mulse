@@ -7,11 +7,15 @@ const AboutPage = () => {
                     <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-90 transition duration-500 ease-in-out" />
                 </div>
                 {/* Konten */}
-                <div className="container relative z-[2] pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[3rem]">
+                <div className="container relative z-[2] pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[6rem]">
                     <div className="flex flex-col lg:flex-row items-center">
                         {/* Kolom gambar */}
                         <div className="w-full lg:w-1/2 p-4 max-h-[500px] overflow-hidden">
-                            <img src="/img/about-profile.webp" alt="About image" className="rounded shadow h-[500px] w-full" />
+                            <img
+                                src="/img/about-profile.webp"
+                                alt="About image"
+                                className="rounded shadow h-[500px] w-full"
+                            />
                         </div>
                         {/* Kolom deskripsi */}
                         <div className="w-full lg:w-1/2 p-4 text-gray-700 dark:text-gray-100 transition duration-500 ease-in-out">

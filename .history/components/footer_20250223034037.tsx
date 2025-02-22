@@ -40,7 +40,7 @@ const Footer = () => {
                     {/* Kontak */}
                     <div>
                         <h2 className="text-lg font-semibold mb-2">Kontak</h2>
-                        <div className="w-12 md:w-[30%] h-1 rounded-r mb-4 bg-gradient-to-r from-sky-400 to-sky-200" />
+                        <div className="w-12 md:w-[30%] h-1 rounded-r mb-4 bg-gradient-to-r from-sky-400 to-transparant" />
                         <table className="space-y-3 text-sm">
                             <tbody>
                                 <tr>

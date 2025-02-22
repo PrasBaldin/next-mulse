@@ -7,11 +7,15 @@ const AboutPage = () => {
                     <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-90 transition duration-500 ease-in-out" />
                 </div>
                 {/* Konten */}
-                <div className="container relative z-[2] pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[3rem]">
+                <div className="container relative z-[2] pt-0 md:pt-[16rem] lg:pt-[15rem] xl:pt-[13rem] pb-[6rem]">
                     <div className="flex flex-col lg:flex-row items-center">
                         {/* Kolom gambar */}
                         <div className="w-full lg:w-1/2 p-4 max-h-[500px] overflow-hidden">
-                            <img src="/img/about-profile.webp" alt="About image" className="rounded shadow h-[500px] w-full" />
+                            <img
+                                src="/img/about-profile.webp"
+                                alt="About image"
+                                className="rounded shadow h-[500px] w-full"
+                            />
                         </div>
                         {/* Kolom deskripsi */}
                         <div className="w-full lg:w-1/2 p-4 text-gray-700 dark:text-gray-100 transition duration-500 ease-in-out">
@@ -29,7 +33,7 @@ const AboutPage = () => {
                     </div>
                 </div>
                 {/* Visi Misi Section dengan Aksen Garis Biru */}
-                <div className="py-16 bg-gradient-to-b from-white to-gray-200 dark:from-gray-900 dark:to-gray-800 z-[2]">
+                <div className="py-16 bg-gradient-to-b from-white to-gray-200 dark:from-gray-900 dark:to-gray-800">
                     <div className="container mx-auto px-4">
                         <h2 className="text-4xl font-bold text-center text-gray-700 dark:text-gray-100 mb-12 relative inline-block">
                             Visi &amp; Misi Kami
@@ -37,7 +41,7 @@ const AboutPage = () => {
                         </h2>
                         <div className="flex flex-col md:flex-row justify-between items-stretch gap-8">
                             {/* Card Visi */}
-                            <div className="flex-1 bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-sky-400 z-[2]">
+                            <div className="flex-1 bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-sky-400">
                                 <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-100 mb-4">
                                     Visi
                                 </h3>
@@ -46,7 +50,7 @@ const AboutPage = () => {
                                 </p>
                             </div>
                             {/* Card Misi */}
-                            <div className="flex-1 bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-sky-400 z-[2]">
+                            <div className="flex-1 bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-sky-400">
                                 <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-100 mb-4">
                                     Misi
                                 </h3>
