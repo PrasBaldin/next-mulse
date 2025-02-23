@@ -21,8 +21,8 @@ const ServicesPage = () => {
             <div className="py-20">
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 z-[2] ">
                 {/* Card Layanan 1 */}
-                <div className="service-card">
-                  <div className="mb-4 flex justify-center text-sky-500 dark:text-sky-200">
+                <div className="service-card dark:bg-gray-800">
+                  <div className="mb-4 flex justify-center text-sky-500">
                     <IconTools />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">
@@ -34,8 +34,8 @@ const ServicesPage = () => {
                   </p>
                 </div>
                 {/* Card Layanan 2 */}
-                <div className="service-card">
-                  <div className="mb-4 flex justify-center text-sky-500 dark:text-sky-200">
+                <div className="service-card dark:bg-gray-900">
+                  <div className="mb-4 flex justify-center text-sky-500">
                     <IconRenovation />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">
@@ -48,8 +48,8 @@ const ServicesPage = () => {
                   </p>
                 </div>
                 {/* Card Layanan 3 */}
-                <div className="service-card">
-                  <div className="mb-4 flex justify-center text-sky-500 dark:text-sky-200">
+                <div className="service-card dark:bg-gray-1000">
+                  <div className="mb-4 flex justify-center text-sky-500">
                     <IconDesign />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">
@@ -62,7 +62,7 @@ const ServicesPage = () => {
                 </div>
                 {/* Card Layanan 4 */}
                 <div className="service-card">
-                  <div className="mb-4 flex justify-center text-sky-500 dark:text-sky-200">
+                  <div className="mb-4 flex justify-center text-sky-500">
                     <IconConsultation />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">
@@ -75,7 +75,7 @@ const ServicesPage = () => {
                 </div>
                 {/* Card Layanan 5 */}
                 <div className="service-card">
-                  <div className="mb-4 flex justify-center text-sky-500 dark:text-sky-200">
+                  <div className="mb-4 flex justify-center text-sky-500">
                     <IconWaterproofing />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">
@@ -89,7 +89,7 @@ const ServicesPage = () => {
                 </div>
                 {/* Card Layanan 6 */}
                 <div className="service-card">
-                  <div className="mb-4 flex justify-center text-sky-500 dark:text-sky-200">
+                  <div className="mb-4 flex justify-center text-sky-500">
                     <IconElectical />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 text-center">

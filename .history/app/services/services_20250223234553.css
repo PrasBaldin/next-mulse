@@ -1,5 +1,5 @@
 .service-card {
-  @apply bg-white dark:bg-sky-900 rounded-lg shadow-lg p-6 border-t-4 border-sky-400 dark:border-sky-200 hover:shadow-xl transition duration-300;
+  @apply bg-white dark:bg-sky-800 rounded-lg shadow-lg p-6 border-t-4 border-sky-400 hover:shadow-xl transition duration-300;
 }
 
 .proc-card {

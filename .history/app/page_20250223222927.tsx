@@ -1,14 +1,14 @@
 import Hero from "@/components/hero";
 import AboutPage from "./about/page";
 import ServicesPage from "./services/page";
-import GalleryHomePage from "./gallery/galleryHomePage";
+import GalleryPage from "./gallery/page";
 
 const IndexPage = () => (
   <>
     <Hero />
     <AboutPage />
     <ServicesPage />
-    <GalleryHomePage />
+    <GalleryPage />
     <section className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-100 transition duration-500 ease-in-out py-5">
       <div className="container">
         <div className="py-[15rem]">
