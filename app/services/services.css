@@ -1,0 +1,15 @@
+.service-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border-t-4 border-sky-400 hover:shadow-xl transition duration-300;
+}
+
+.proc-card {
+  @apply rounded-lg shadow-md flex items-center text-center transition-transform transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg overflow-hidden;
+}
+
+.proc-card-overlay {
+  @apply absolute left-0 right-0 z-[2] transition duration-500 opacity-0;
+}
+
+.proc-card:hover .proc-card-overlay {
+  @apply opacity-100;
+}

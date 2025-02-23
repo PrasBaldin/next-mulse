@@ -1,0 +1,11 @@
+.service-card {
+    @apply rounded-lg shadow-md flex items-center text-center transition-transform transform duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg overflow-hidden
+}
+
+.service-card-overlay {
+    absolute left-0 right-0 z-[2] transition duration-500 opacity-0 
+}
+
+.service-card:hover .service-card-overlay {
+    @apply hover:opacity-100
+}
