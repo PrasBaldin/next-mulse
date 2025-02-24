@@ -1,0 +1,9 @@
+.banner {
+  background-image: url("/img/banner-2.jpg");
+  background-size: cover;
+  @apply py-[100px] relative;
+}
+
+.banner-mask {
+  @apply absolute inset-0 bg-gradient-to-tr from-gray-100 dark:from-gray-800 to-sky-300 dark:bg-gray-700 opacity-40 z-[0];
+}
