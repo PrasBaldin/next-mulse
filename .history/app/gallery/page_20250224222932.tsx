@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -47,10 +46,11 @@ const GalleryPage = () => {
     },
   ];
 
-  // Tentukan tipe state sebagai number atau null
-  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  // State untuk mengatur index gambar yang sedang tampil di modal
+  // Jika currentIndex bernilai null, modal tidak ditampilkan
+  const [currentIndex, setCurrentIndex] = useState(null);
 
-  const openModal = (index: number) => {
+  const openModal = (index) => {
     setCurrentIndex(index);
   };
 
@@ -60,12 +60,12 @@ const GalleryPage = () => {
 
   const showPrev = () => {
     setCurrentIndex(
-      (prev) => (prev! + galleryItems.length - 1) % galleryItems.length
+      (prev) => (prev + galleryItems.length - 1) % galleryItems.length
     );
   };
 
   const showNext = () => {
-    setCurrentIndex((prev) => (prev! + 1) % galleryItems.length);
+    setCurrentIndex((prev) => (prev + 1) % galleryItems.length);
   };
 
   return (
@@ -131,10 +131,10 @@ const GalleryPage = () => {
                     <div className="h-full relative">
                       <div className="absolute inset-0 bg-black transition duration-500 opacity-0 group-hover:opacity-50 z-0" />
                       <div className="flex flex-col justify-end h-full w-full p-6 relative z-[2]">
-                        <p className="uppercase text-sm font-semibold tracking-[.05em] mb-2 text-sky-500">
+                        <p className="uppercase tracking-[.05em] mb-2 text-sky-500">
                           {item.category}
                         </p>
-                        <h3 className="text-xl font-medium text-gray-100">
+                        <h3 className="text-xl font-semibold text-gray-100">
                           {item.title}
                         </h3>
                       </div>
@@ -144,43 +144,6 @@ const GalleryPage = () => {
               </div>
             ))}
           </div>
-
-          {/* Modal Custom Lightbox */}
-          {currentIndex !== null && (
-            <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-              <div className="relative">
-                {/* Tombol Tutup */}
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 text-white text-2xl"
-                >
-                  &times;
-                </button>
-                {/* Tombol Navigasi Kiri */}
-                <button
-                  onClick={showPrev}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl"
-                >
-                  &#10094;
-                </button>
-                {/* Gambar yang ditampilkan */}
-                <Image
-                  src={galleryItems[currentIndex].img}
-                  alt={galleryItems[currentIndex].title}
-                  width={1200}
-                  height={800}
-                  className="max-h-screen object-contain"
-                />
-                {/* Tombol Navigasi Kanan */}
-                <button
-                  onClick={showNext}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl"
-                >
-                  &#10095;
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </>

@@ -47,10 +47,11 @@ const GalleryPage = () => {
     },
   ];
 
-  // Tentukan tipe state sebagai number atau null
-  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  // State untuk mengatur index gambar yang sedang tampil di modal
+  // Jika currentIndex bernilai null, modal tidak ditampilkan
+  const [currentIndex, setCurrentIndex] = useState(null);
 
-  const openModal = (index: number) => {
+  const openModal = (index) => {
     setCurrentIndex(index);
   };
 
@@ -60,12 +61,12 @@ const GalleryPage = () => {
 
   const showPrev = () => {
     setCurrentIndex(
-      (prev) => (prev! + galleryItems.length - 1) % galleryItems.length
+      (prev) => (prev + galleryItems.length - 1) % galleryItems.length
     );
   };
 
   const showNext = () => {
-    setCurrentIndex((prev) => (prev! + 1) % galleryItems.length);
+    setCurrentIndex((prev) => (prev + 1) % galleryItems.length);
   };
 
   return (
@@ -134,7 +135,7 @@ const GalleryPage = () => {
                         <p className="uppercase text-sm font-semibold tracking-[.05em] mb-2 text-sky-500">
                           {item.category}
                         </p>
-                        <h3 className="text-xl font-medium text-gray-100">
+                        <h3 className="text-xl font-semibold text-gray-100">
                           {item.title}
                         </h3>
                       </div>

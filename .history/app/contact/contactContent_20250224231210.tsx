@@ -114,7 +114,7 @@ const ContactContent: React.FC = () => {
         {/* Grid Utama: Form (kiri) dan Info Kontak (kanan) */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Bagian Kiri: Form */}
-          <div className="p-8 bg-gray-100 dark:bg-gray-600 rounded">
+          <div className="p-8 bg-gray-100 dark:bg-gray-700 rounded">
             <h3 className="text-xl font-semibold mb-6">Send us a message</h3>
             {/* Alert messages */}
             {successMessage && (
@@ -142,7 +142,7 @@ const ContactContent: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 rounded bg-gray-200 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
+                  className="w-full p-3 rounded bg-gray-200 dark:bg-gray-600 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
                   required
                 />
               </div>
@@ -165,7 +165,7 @@ const ContactContent: React.FC = () => {
                     errors.email
                       ? "border-red-500 focus:ring-red-500 "
                       : "border-gray-300 focus:ring-sky-500 "
-                  } w-full p-3 rounded bg-gray-200 dark:bg-gray-500 border dark:border-gray-600 focus:outline-none focus:ring-2 transition duration-500 ease-in-out`}
+                  } w-full p-3 rounded bg-gray-200 dark:bg-gray-600 border dark:border-gray-700 focus:outline-none focus:ring-2 transition duration-500 ease-in-out`}
                   required
                 />
                 <span className="text-red-500">
@@ -187,7 +187,7 @@ const ContactContent: React.FC = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full p-3 rounded bg-gray-200 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
+                  className="w-full p-3 rounded bg-gray-200 dark:bg-gray-600 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
                   required
                 />
               </div>
@@ -206,7 +206,7 @@ const ContactContent: React.FC = () => {
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full p-3 rounded bg-gray-200 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
+                  className="w-full p-3 rounded bg-gray-200 dark:bg-gray-600 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
                   required
                 />
               </div>

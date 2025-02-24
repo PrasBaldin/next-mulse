@@ -114,7 +114,7 @@ const Navbar = () => {
               >
                 <button className="nav-link flex items-center">Layanan</button>
                 <div
-                  className={`nav-dropdown min-w-[200px] ${
+                  className={`nav-dropdown ${
                     isDropdownOpen
                       ? "opacity-100 visible scale-100 translate-y-0"
                       : "opacity-0 invisible scale-95 translate-y-3"

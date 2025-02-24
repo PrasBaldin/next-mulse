@@ -104,7 +104,7 @@ const Navbar = () => {
 
             <div className="hidden lg:flex space-x-6 items-center">
               <Link href="/" className="nav-link">
-                Beranda
+                {"navbar.home"}
               </Link>
 
               <div
@@ -112,19 +112,21 @@ const Navbar = () => {
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                <button className="nav-link flex items-center">Layanan</button>
+                <button className="nav-link flex items-center">
+                  {"navbar.services"}
+                </button>
                 <div
-                  className={`nav-dropdown min-w-[200px] ${
+                  className={`nav-dropdown ${
                     isDropdownOpen
                       ? "opacity-100 visible scale-100 translate-y-0"
                       : "opacity-0 invisible scale-95 translate-y-3"
                   }`}
                 >
                   <Link href="/pengadaan-barang" className="nav-link-dropdown">
-                    Pengadaan Barang
+                    {"navbar.service.procurement"}
                   </Link>
                   <Link href="/jasa-konstruksi" className="nav-link-dropdown">
-                    Jasa Konstruksi
+                    {"navbar.service.construction"}
                   </Link>
                 </div>
               </div>
@@ -133,16 +135,16 @@ const Navbar = () => {
                 target="_blank"
                 className="nav-link"
               >
-                E-Katalog
+                {"navbar.catalog"}
               </a>
               <Link href="/gallery" className="nav-link">
-                Galeri
+                {"navbar.gallery"}
               </Link>
               <Link href="/about" className="nav-link">
-                Tentang Kami
+                {"navbar.about"}
               </Link>
               <Link href="/contact" className="nav-link">
-                Kontak
+                {"navbar.contact"}
               </Link>
             </div>
 
@@ -184,7 +186,7 @@ const Navbar = () => {
 
       {/* Sidebar Menu */}
       <div
-        className={`bg-white dark:bg-gray-800 lg:hidden fixed top-18 mt-[72px] right-0 w-64 h-full shadow-lg transform transition-transform duration-500 ease-in-out z-10 ${
+        className={`bg-white dark:bg-gray-800 lg:hidden fixed top-18 right-0 w-64 h-full shadow-lg transform transition-transform duration-500 ease-in-out z-10 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -194,7 +196,7 @@ const Navbar = () => {
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Beranda
+            {"navbar.home"}
           </Link>
 
           <div>
@@ -202,7 +204,7 @@ const Navbar = () => {
               className="nav-link-mobile flex items-center w-full"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
-              Layanan
+              {"navbar.services"}
               <span
                 className={`dropdown-arrow ${
                   isDropdownOpen
@@ -223,14 +225,14 @@ const Navbar = () => {
                 className="nav-link-mobile block"
                 onClick={() => setIsOpen(false)}
               >
-                Pengadaan Barang
+                {"navbar.service.procurement"}
               </Link>
               <Link
                 href="/jasa-konstruksi"
                 className="nav-link-mobile block"
                 onClick={() => setIsOpen(false)}
               >
-                Jasa Konstruksi
+                {"navbar.service.construction"}
               </Link>
             </div>
           </div>
@@ -239,28 +241,28 @@ const Navbar = () => {
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            E-Katalog
+            {"navbar.catalog"}
           </Link>
           <Link
             href="/gallery"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Galeri
+            {"navbar.gallery"}
           </Link>
           <Link
             href="/about"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Tentang Kami
+            {"navbar.about"}
           </Link>
           <Link
             href="/contact"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Kontak
+            {"navbar.contact"}
           </Link>
           {/* <ToggleLanguage /> */}
           <ToggleDarkMode />

@@ -7,7 +7,7 @@ import ContactContent from "./contact/contactContent";
 import ClientPartner from "./about/clientPartner";
 
 const IndexPage = () => (
-  <>
+  <?>
     <Hero />
     <AboutContent />
     <ServicesPage />
