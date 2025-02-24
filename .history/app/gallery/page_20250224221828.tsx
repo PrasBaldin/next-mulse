@@ -92,7 +92,7 @@ const GalleryPage = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="shadow-md max-h-[350px] md:max-h-[250px] lg:max-h-[300px] overflow-hidden relative group"
+                className="shadow-md max-h-[400px] lg:max-h-[300px] overflow-hidden relative group"
               >
                 <Link href="/">
                   <Image
@@ -100,7 +100,7 @@ const GalleryPage = () => {
                     alt="img"
                     width={1000}
                     height={1000}
-                    className="h-[350px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
+                    className="h-[500px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
                   ></Image>
                   <div className="overlay absolute inset-0">
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">

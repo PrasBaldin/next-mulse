@@ -21,32 +21,26 @@ const RecentWork = () => {
             {[
               {
                 img: "/img/gallery-1.jpg",
-                category: "Electrical Engineering",
                 title: "Pekerjaan Pemasangan Lampu Sorot",
               },
               {
                 img: "/img/gallery-2.jpg",
-                category: "Renovasi & Perbaikan",
                 title: "Pekerjaan Renovasi Garasi Rumah",
               },
               {
                 img: "/img/gallery-3.jpg",
-                category: "Renovasi & Perbaikan",
                 title: "Pekerjaan Pemeliharaan Marmer",
               },
               {
                 img: "/img/gallery-4.jpg",
-                category: "Renovasi & Perbaikan",
                 title: "Pekerjaan Renovasi Interior Kantor",
               },
               {
                 img: "/img/gallery-5.jpg",
-                category: "Konstruksi",
                 title: "Pekerjaan Pembuatan Parkir Sepeda",
               },
               {
                 img: "/img/gallery-6.jpg",
-                category: "Konstruksi",
                 title: "Pekerjaan Rangka Pembuatan Baliho",
               },
             ].map((item, index) => (
@@ -65,12 +59,9 @@ const RecentWork = () => {
                   <div className="overlay absolute inset-0">
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">
                       <div className="h-full relative">
-                        <div className="absolute inset-0 bg-black transition duration-500 opacity-0 group-hover:opacity-50 z-0" />
-                        <div className="flex flex-col justify-end h-full w-full p-6 relative z-[2]">
-                          <p className="uppercase tracking-[.05em] mb-2 text-sky-500">
-                            {item.category}
-                          </p>
-                          <h3 className="text-xl lg:text-2xl font-semibold text-gray-100">
+                        <div className="absolute inset-0 bg-gray-500 dark:bg-gray-800 transition duration-500 opacity-0 group-hover:opacity-80 z-0" />
+                        <div className="z-[2] flex flex-col justify-center items-center w-1/2">
+                          <h3 className="text-2xl font-semibold mb-4 text-gray-100 dark:text-gray-100 ">
                             {item.title}
                           </h3>
                         </div>

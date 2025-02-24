@@ -47,7 +47,7 @@ const GalleryPage = () => {
               <div className="w-[150px] h-1 absolute left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
             {[
               {
                 img: "/img/gallery-1.jpg",
@@ -92,7 +92,7 @@ const GalleryPage = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="shadow-md max-h-[350px] md:max-h-[250px] lg:max-h-[300px] overflow-hidden relative group"
+                className="shadow-md max-h-[400px] lg:max-h-[300px] overflow-hidden relative group"
               >
                 <Link href="/">
                   <Image
@@ -100,7 +100,7 @@ const GalleryPage = () => {
                     alt="img"
                     width={1000}
                     height={1000}
-                    className="h-[350px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
+                    className="h-[600px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
                   ></Image>
                   <div className="overlay absolute inset-0">
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">

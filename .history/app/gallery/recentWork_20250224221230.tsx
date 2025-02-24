@@ -66,11 +66,11 @@ const RecentWork = () => {
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">
                       <div className="h-full relative">
                         <div className="absolute inset-0 bg-black transition duration-500 opacity-0 group-hover:opacity-50 z-0" />
-                        <div className="flex flex-col justify-end h-full w-full p-6 relative z-[2]">
-                          <p className="uppercase tracking-[.05em] mb-2 text-sky-500">
+                        <div className="flex flex-col justify-end h-full w-1/2 p-6 relative z-[2]">
+                          <p className="uppercase tracking-[.05em] text-sky-500 dark:text-gray-100 ">
                             {item.category}
                           </p>
-                          <h3 className="text-xl lg:text-2xl font-semibold text-gray-100">
+                          <h3 className="text-2xl font-semibold text-gray-100 dark:text-gray-100 ">
                             {item.title}
                           </h3>
                         </div>

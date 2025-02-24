@@ -1,53 +1,23 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-const GalleryPage = () => {
+const RecentWork = () => {
   return (
     <>
-      <section className="mt-[72px] lg:mt-[112px]">
-        <div className="banner">
-          <div className="banner-mask"></div>
-          <div className="container z-[1] relative">
-            <div className="banner-content">
-              <h4 className="text-3xl font-bold text-gray-800 dark:text-gray-100 transition duration-500 ease-in-out">
-                Gallery Page
-              </h4>
-              <ul className="breadcrumbs">
-                <li>
-                  <Link
-                    href="/"
-                    className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out">
-                  /
-                </li>
-                <li>
-                  <Link href="/gallery" className="text-sky-500">
-                    Gallery
-                  </Link>
-                </li>
-              </ul>
-            </div>
+      <section>
+        <div className="bg-white dark:bg-gradient-to-bl dark:from-gray-900 dark:to-gray-800 py-20 flex justify-center text-center">
+          <div className="w-full mb-20 pb-20">
+            <h4 className="mb-3 text-sky-500 font-semibold tracking-[.25em] uppercase">
+              Recent Work
+            </h4>
+            <h3 className="w-full text-gray-700 dark:text-gray-100 text-3xl md:text-4xl font-bold">
+              Check out some of our latest works
+            </h3>
           </div>
         </div>
-      </section>
-      <section className="pt-20 pb-[8rem]">
         <div className="container">
-          <div className="text-center text-3xl font-semibold text-gray-700 dark:text-gray-100 mb-10">
-            <h3>
-              OUR
-              <br />
-              PROJECTS
-            </h3>
-            <div className="relative my-2">
-              <div className="w-[150px] h-1 absolute left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 relative top-[-150px]">
             {[
               {
                 img: "/img/gallery-1.jpg",
@@ -79,20 +49,10 @@ const GalleryPage = () => {
                 category: "Konstruksi",
                 title: "Pekerjaan Rangka Pembuatan Baliho",
               },
-              {
-                img: "/img/parallax-1.webp",
-                category: "Waterproofing",
-                title: "Pekerjaan 7",
-              },
-              {
-                img: "/img/parallax-2.webp",
-                category: "Konstruksi",
-                title: "Pekerjaan 8",
-              },
             ].map((item, index) => (
               <div
                 key={index}
-                className="shadow-md max-h-[350px] md:max-h-[250px] lg:max-h-[300px] overflow-hidden relative group"
+                className="bg-red-100 shadow-md max-h-[500px] overflow-hidden group relative"
               >
                 <Link href="/">
                   <Image
@@ -100,7 +60,7 @@ const GalleryPage = () => {
                     alt="img"
                     width={1000}
                     height={1000}
-                    className="h-[350px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
+                    className="h-[450px] lg:h-[300px] xl:h-[400px] 2xl:h-[500px] transform transition-transform duration-500 group-hover:scale-[1.05]"
                   ></Image>
                   <div className="overlay absolute inset-0">
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">
@@ -110,7 +70,7 @@ const GalleryPage = () => {
                           <p className="uppercase tracking-[.05em] mb-2 text-sky-500">
                             {item.category}
                           </p>
-                          <h3 className="text-xl font-semibold text-gray-100">
+                          <h3 className="text-2xl font-semibold text-gray-100">
                             {item.title}
                           </h3>
                         </div>
@@ -127,4 +87,4 @@ const GalleryPage = () => {
   );
 };
 
-export default GalleryPage;
+export default RecentWork;

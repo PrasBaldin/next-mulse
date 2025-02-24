@@ -92,7 +92,7 @@ const GalleryPage = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="shadow-md max-h-[350px] md:max-h-[250px] lg:max-h-[300px] overflow-hidden relative group"
+                className="shadow-md max-h-[350px] lg:max-h-[300px] overflow-hidden relative group"
               >
                 <Link href="/">
                   <Image

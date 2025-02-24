@@ -47,70 +47,62 @@ const GalleryPage = () => {
               <div className="w-[150px] h-1 absolute left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
             {[
               {
-                img: "/img/gallery-1.jpg",
-                category: "Electrical Engineering",
-                title: "Pekerjaan Pemasangan Lampu Sorot",
+                img: "/img/parallax-1.webp",
+                title: "Pekerjaan 1",
               },
               {
-                img: "/img/gallery-2.jpg",
-                category: "Renovasi & Perbaikan",
-                title: "Pekerjaan Renovasi Garasi Rumah",
+                img: "/img/parallax-2.webp",
+                title: "Pekerjaan 2",
               },
               {
-                img: "/img/gallery-3.jpg",
-                category: "Renovasi & Perbaikan",
-                title: "Pekerjaan Pemeliharaan Marmer",
-              },
-              {
-                img: "/img/gallery-4.jpg",
-                category: "Renovasi & Perbaikan",
-                title: "Pekerjaan Renovasi Interior Kantor",
-              },
-              {
-                img: "/img/gallery-5.jpg",
-                category: "Konstruksi",
-                title: "Pekerjaan Pembuatan Parkir Sepeda",
-              },
-              {
-                img: "/img/gallery-6.jpg",
-                category: "Konstruksi",
-                title: "Pekerjaan Rangka Pembuatan Baliho",
+                img: "/img/parallax-2.webp",
+                title: "Pekerjaan 3",
               },
               {
                 img: "/img/parallax-1.webp",
-                category: "Waterproofing",
+                title: "Pekerjaan 4",
+              },
+              {
+                img: "/img/parallax-2.webp",
+                title: "Pekerjaan 5",
+              },
+              {
+                img: "/img/parallax-1.webp",
+                title: "Pekerjaan 6",
+              },
+              {
+                img: "/img/parallax-1.webp",
                 title: "Pekerjaan 7",
               },
               {
                 img: "/img/parallax-2.webp",
-                category: "Konstruksi",
                 title: "Pekerjaan 8",
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="shadow-md max-h-[350px] md:max-h-[250px] lg:max-h-[300px] overflow-hidden relative group"
+                className="shadow-md max-h-[400px] lg:max-h-[300px] overflow-hidden relative group"
               >
-                <Link href="/">
+                <Link>
                   <Image
                     src={item.img}
                     alt="img"
                     width={1000}
                     height={1000}
-                    className="h-[350px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
+                    className="h-[600px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
                   ></Image>
                   <div className="overlay absolute inset-0">
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">
                       <div className="h-full relative">
                         <div className="absolute inset-0 bg-black transition duration-500 opacity-0 group-hover:opacity-50 z-0" />
-                        <div className="flex flex-col justify-end h-full w-full p-6 relative z-[2]">
+                        <div className="flex flex-col justify-end h-full w-1/2 p-6 relative z-[2]">
                           <p className="uppercase tracking-[.05em] mb-2 text-sky-500">
                             {item.category}
                           </p>
-                          <h3 className="text-xl font-semibold text-gray-100">
+                          <h3 className="text-2xl font-semibold text-gray-100">
                             {item.title}
                           </h3>
                         </div>
