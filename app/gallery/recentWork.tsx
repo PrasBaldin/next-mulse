@@ -20,12 +20,12 @@ const RecentWork = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 relative top-[-150px]">
             {[
               {
-                img: "/img/gallery-1.jpg",
-                category: "Electrical Engineering",
-                title: "Pekerjaan Pemasangan Lampu Sorot",
+                img: "/img/gallery-1-1.jpg",
+                category: "Renovasi & Perbaikan",
+                title: "Pekerjaan Renovasi Interior Kantor",
               },
               {
-                img: "/img/gallery-2.jpg",
+                img: "/img/gallery-2-1.jpg",
                 category: "Renovasi & Perbaikan",
                 title: "Pekerjaan Renovasi Garasi Rumah",
               },
@@ -35,24 +35,24 @@ const RecentWork = () => {
                 title: "Pekerjaan Pemeliharaan Marmer",
               },
               {
-                img: "/img/gallery-4.jpg",
-                category: "Renovasi & Perbaikan",
-                title: "Pekerjaan Renovasi Interior Kantor",
+                img: "/img/gallery-9-1.jpg",
+                category: "Electrical Engineering",
+                title: "Pekerjaan Pemasangan Lampu Sorot",
               },
               {
-                img: "/img/gallery-5.jpg",
-                category: "Konstruksi",
-                title: "Pekerjaan Pembuatan Parkir Sepeda",
+                img: "/img/gallery-5-1.jpg",
+                category: "Waterproofing",
+                title: "Pekerjaan Waterproofing Membran",
               },
               {
-                img: "/img/gallery-6.jpg",
+                img: "/img/gallery-7-1.jpg",
                 category: "Konstruksi",
-                title: "Pekerjaan Rangka Pembuatan Baliho",
+                title: "Pekerjaan Pembuatan Pos Satpam",
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-red-100 shadow-md max-h-[500px] overflow-hidden group relative"
+                className="bg-red-100 shadow-md overflow-hidden group relative"
               >
                 <Link href="/gallery">
                   <Image
@@ -60,7 +60,7 @@ const RecentWork = () => {
                     alt="img"
                     width={1000}
                     height={1000}
-                    className="h-[450px] lg:h-[300px] xl:h-[400px] 2xl:h-[500px] transform transition-transform duration-500 group-hover:scale-[1.05]"
+                    className="transform transition-transform duration-500 group-hover:scale-[1.05]"
                   ></Image>
                   <div className="overlay absolute inset-0">
                     <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">

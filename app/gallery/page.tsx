@@ -6,12 +6,32 @@ import Image from "next/image";
 const GalleryPage = () => {
   const galleryItems = [
     {
-      img: "/img/gallery-1.jpg",
-      category: "Electrical Engineering",
-      title: "Pekerjaan Pemasangan Lampu Sorot",
+      img: "/img/gallery-1-1.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Renovasi Interior Kantor",
     },
     {
-      img: "/img/gallery-2.jpg",
+      img: "/img/gallery-1-2.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Renovasi Interior Kantor",
+    },
+    {
+      img: "/img/gallery-1-3.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Renovasi Interior Kantor",
+    },
+    {
+      img: "/img/gallery-2-1.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Renovasi Garasi Rumah",
+    },
+    {
+      img: "/img/gallery-2-2.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Renovasi Garasi Rumah",
+    },
+    {
+      img: "/img/gallery-2-3.jpg",
       category: "Renovasi & Perbaikan",
       title: "Pekerjaan Renovasi Garasi Rumah",
     },
@@ -21,29 +41,104 @@ const GalleryPage = () => {
       title: "Pekerjaan Pemeliharaan Marmer",
     },
     {
-      img: "/img/gallery-4.jpg",
-      category: "Renovasi & Perbaikan",
-      title: "Pekerjaan Renovasi Interior Kantor",
+      img: "/img/gallery-4-1.jpg",
+      category: "Electrical Engineering",
+      title: "Pekerjaan Pemasangan Lampu Hanggar",
     },
     {
-      img: "/img/gallery-5.jpg",
+      img: "/img/gallery-4-2.jpg",
+      category: "Electrical Engineering",
+      title: "Pekerjaan Pemasangan Lampu Hanggar",
+    },
+    {
+      img: "/img/gallery-5-1.jpg",
+      category: "Waterproofing",
+      title: "Pekerjaan Waterproofing Membran",
+    },
+    {
+      img: "/img/gallery-5-2.jpg",
+      category: "Waterproofing",
+      title: "Pekerjaan Waterproofing Membran",
+    },
+    {
+      img: "/img/gallery-5-3.jpg",
+      category: "Waterproofing",
+      title: "Pekerjaan Waterproofing Membran",
+    },
+    {
+      img: "/img/gallery-6-1.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Atap Lapangan",
+    },
+    {
+      img: "/img/gallery-6-2.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Atap Lapangan",
+    },
+    {
+      img: "/img/gallery-6-3.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Atap Lapangan",
+    },
+    {
+      img: "/img/gallery-7-1.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Pos Satpam",
+    },
+    {
+      img: "/img/gallery-7-2.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Pos Satpam",
+    },
+    {
+      img: "/img/gallery-8-1.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Modifikasi Kontainer",
+    },
+    {
+      img: "/img/gallery-8-2.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Modifikasi Kontainer",
+    },
+    {
+      img: "/img/gallery-8-3.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Modifikasi Kontainer",
+    },
+    {
+      img: "/img/gallery-9-1.jpg",
+      category: "Electrical Engineering",
+      title: "Pekerjaan Pemasangan Lampu Sorot",
+    },
+    {
+      img: "/img/gallery-9-2.jpg",
+      category: "Electrical Engineering",
+      title: "Pekerjaan Pemasangan Lampu Sorot",
+    },
+    {
+      img: "/img/gallery-10-1.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Klinik",
+    },
+    {
+      img: "/img/gallery-10-2.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Klinik",
+    },
+    {
+      img: "/img/gallery-10-3.jpg",
+      category: "Konstruksi",
+      title: "Pekerjaan Pembuatan Klinik",
+    },
+    {
+      img: "/img/gallery-11.jpg",
       category: "Konstruksi",
       title: "Pekerjaan Pembuatan Parkir Sepeda",
     },
     {
-      img: "/img/gallery-6.jpg",
+      img: "/img/gallery-12.jpg",
       category: "Konstruksi",
-      title: "Pekerjaan Rangka Pembuatan Baliho",
-    },
-    {
-      img: "/img/parallax-1.webp",
-      category: "Waterproofing",
-      title: "Pekerjaan 7",
-    },
-    {
-      img: "/img/parallax-2.webp",
-      category: "Konstruksi",
-      title: "Pekerjaan 8",
+      title: "Pekerjaan Pembuatan Rangka Baliho",
     },
   ];
 
@@ -116,7 +211,7 @@ const GalleryPage = () => {
             {galleryItems.map((item, index) => (
               <div
                 key={index}
-                className="shadow-md max-h-[350px] md:max-h-[250px] lg:max-h-[300px] overflow-hidden relative group cursor-pointer"
+                className="shadow-md overflow-hidden relative group cursor-pointer"
                 onClick={() => openModal(index)}
               >
                 <Image
@@ -124,7 +219,7 @@ const GalleryPage = () => {
                   alt={item.title}
                   width={1000}
                   height={1000}
-                  className="h-[350px] md:h-[250px] lg:h-[300px] xl:h-[200px] transform transition duration-500 group-hover:scale-[1.05]"
+                  className="transform transition duration-500 group-hover:scale-[1.05]"
                 />
                 <div className="overlay absolute inset-0">
                   <div className="text-gray-100 transition duration-500 opacity-0 group-hover:opacity-100 h-full">
