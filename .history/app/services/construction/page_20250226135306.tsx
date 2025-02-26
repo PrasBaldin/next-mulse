@@ -1,0 +1,123 @@
+import Link from "next/link";
+import IconTools from "../../_assets/servicesIcon/iconConstruction";
+import IconRenovation from "../../_assets/servicesIcon/iconRenovation";
+import IconDesign from "../../_assets/servicesIcon/iconDesign";
+import IconConsultation from "../../_assets/servicesIcon/iconConsultation";
+import IconWaterproofing from "../../_assets/servicesIcon/iconWaterproofing";
+import IconElectrical from "../../_assets/servicesIcon/iconElectrical";
+
+const ConstructionPage = () => {
+  const services = [
+    {
+      icon: "construction",
+      title: "Jasa Konstruksi",
+      description:
+        "Membangun dari nol dengan desain inovatif dan material berkualitas.",
+    },
+    {
+      icon: "renovation",
+      title: "Jasa Renovasi",
+      description:
+        "Kami menyediakan jasa renovasi dengan standar kualitas terbaik.",
+    },
+    {
+      icon: "design",
+      title: "Jasa Desain",
+      description:
+        "Desain bangunan yang modern dan sesuai dengan kebutuhan klien.",
+    },
+    {
+      icon: "waterproofing",
+      title: "Waterproofing",
+      description: "Solusi waterproofing profesional untuk mencegah kebocoran.",
+    },
+    {
+      icon: "consultation",
+      title: "Konsultasi Konstruksi",
+      description: "Dapatkan konsultasi konstruksi dari tim ahli kami.",
+    },
+    {
+      icon: "electrical",
+      title: "Jasa Kelistrikan",
+      description: "Pekerjaan instalasi dan perbaikan sistem kelistrikan.",
+    },
+  ];
+
+  return (
+    <>
+      <section className="mt-[72px] lg:mt-[112px]">
+        <div className="banner">
+          <div className="banner-mask"></div>
+          <div className="container z-[1] relative">
+            <div className="banner-content">
+              <h4 className="text-3xl font-bold text-gray-800 dark:text-gray-100 transition duration-500 ease-in-out">
+                Jasa Konstruksi
+              </h4>
+              <ul className="breadcrumbs">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out">
+                  /
+                </li>
+                <li>
+                  <Link
+                    href="/"
+                    className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out">
+                  /
+                </li>
+                <li>
+                  <Link href="/gallery" className="text-sky-500">
+                    Construction
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="container">
+          <div className="mb-10 text-center">
+            <h4 className="mb-3 text-sky-500 font-semibold tracking-[.25em] uppercase">
+              Jasa Konstruksi
+            </h4>
+            <h3 className="py-2 my-2 mx-auto w-full md:w-3/4 text-gray-700 dark:text-gray-100 transition duration-500 ease-in-out text-xl">
+              Kami menghadirkan solusi konstruksi yang menyeluruh dan inovatif
+              untuk memenuhi standar kualitas tertinggi dan disesuaikan dengan
+              kebutuhan spesifik klien
+            </h3>
+          </div>
+          <div className="service-content grid grid-cols-2 md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="card bg-gray-200 rounded p-8">
+                <div className="card-img pb-3">
+                  <span>Image</span>
+                </div>
+                <div className="card-title text-xl font-semibold pb-3">
+                  <h4>{service.title}</h4>
+                </div>
+                <div className="card-desc pb-3">
+                  <p>{service.description}</p>
+                </div>
+                <button className="btn btn-primary">Hubungi Kami</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ConstructionPage;
