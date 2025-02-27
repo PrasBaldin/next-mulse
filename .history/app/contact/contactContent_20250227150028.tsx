@@ -1,0 +1,287 @@
+"use client";
+import AnimationFadeIn from "@/components/animationFadeIn";
+import React, { useState } from "react";
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface Errors {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
+const ContactContent: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState<Errors>({});
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  // Fungsi validasi email
+  const validateEmail = (value: string): string => {
+    if (!value) {
+      return "Email is required";
+    }
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    if (!emailRegex.test(value)) {
+      return "Invalid email format";
+    }
+    return "";
+  };
+
+  // Handle perubahan input
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // Lakukan validasi khusus untuk email
+    if (name === "email") {
+      const errorMsg = validateEmail(value);
+      setErrors((prev) => ({
+        ...prev,
+        email: errorMsg,
+      }));
+    } else {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "", // reset error untuk field lain jika diperlukan
+      }));
+    }
+  };
+
+  // Handle submit form
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Reset pesan alert
+    setSuccessMessage(null);
+    setErrorMessage(null);
+
+    // Validasi email
+    const emailError = validateEmail(formData.email);
+    if (emailError) {
+      setErrors((prev) => ({
+        ...prev,
+        email: emailError,
+      }));
+      setErrorMessage("Sorry, something is wrong. Please try again!");
+      return;
+    }
+
+    // Jika semua validasi sudah benar
+    setSuccessMessage(
+      "Thank you for your message. We will get back to you soon."
+    );
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+    setErrors({});
+  };
+
+  return (
+    <section className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white py-16">
+      <div className="container">
+        {/* Bagian Judul Utama */}
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <AnimationFadeIn
+            delay={0.3}
+            duration={1}
+            direction="down"
+            triggerOnExit
+          ></AnimationFadeIn>
+          <h4 className="mb-3 text-sky-500 font-semibold tracking-[.25em] uppercase">
+            Contact Us
+          </h4>
+          <h3 className="text-3xl md:text-4xl font-bold">
+            Mulai proyek baru dengan kami
+          </h3>
+        </div>
+
+        {/* Grid Utama: Form (kiri) dan Info Kontak (kanan) */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Bagian Kiri: Form */}
+          <div className="p-8 bg-gray-200 dark:bg-gray-600 rounded">
+            <h3 className="text-xl font-semibold mb-6">Kirim pesan</h3>
+            {/* Alert messages */}
+            {successMessage && (
+              <div className="mb-4 rounded bg-green-500 p-4 text-white">
+                {successMessage}
+              </div>
+            )}
+            {errorMessage && (
+              <div className="mb-4 rounded bg-red-500 p-4 text-white">
+                {errorMessage}
+              </div>
+            )}
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Name Field */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium"
+                >
+                  Nama
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full p-3 rounded bg-gray-300 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
+                  required
+                />
+              </div>
+
+              {/* Email Field */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`${
+                    errors.email
+                      ? "border-red-500 focus:ring-red-500 "
+                      : "border-gray-300 focus:ring-sky-500 "
+                  } w-full p-3 rounded bg-gray-300 dark:bg-gray-500 border dark:border-gray-600 focus:outline-none focus:ring-2 transition duration-500 ease-in-out`}
+                  required
+                />
+                <span className="text-red-500">
+                  {errors.email ? "Email not valid" : ""}
+                </span>
+              </div>
+
+              {/* Subject Field */}
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block mb-2 text-sm font-medium"
+                >
+                  Subjek
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full p-3 rounded bg-gray-300 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
+                  required
+                />
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block mb-2 text-sm font-medium"
+                >
+                  Pesan
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full p-3 rounded bg-gray-300 dark:bg-gray-500 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-500 ease-in-out"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Kirim
+              </button>
+            </form>
+          </div>
+
+          {/* Bagian Kanan: Info Kontak */}
+          <div className="p-8">
+            <h3 className="text-xl font-semibold mb-6">Info Kontak</h3>
+            <ul className="space-y-6">
+              <li>
+                {/* <h4 className="text-sm uppercase font-bold mb-1">
+                  Where to Find Us
+                </h4> */}
+                <h4 className="text-sm uppercase font-bold mb-1">
+                  Lokasi Kami
+                </h4>
+                <p className="dark:text-gray-400 text-gray-700 transition duration-500 ease-in-out">
+                  Jl. SMA 14 No. 47 B Kel. Cililitan,
+                  <br />
+                  Kec. Keramat Jati, Jakarta Timur
+                  <br />
+                  Indonesia
+                </p>
+              </li>
+              <li>
+                {/* <h4 className="text-sm uppercase font-bold mb-1">
+                  Email Us At
+                </h4> */}
+                <h4 className="text-sm uppercase font-bold mb-1">Email Kami</h4>
+                <a
+                  href="mailto:info@mulse.id"
+                  target="_blank"
+                  className="dark:text-gray-400 text-gray-700 hover:text-sky-500 dark:hover:text-sky-500 transition duration-500 ease-in-out"
+                >
+                  info@mulse.id
+                </a>
+              </li>
+              <li>
+                {/* <h4 className="text-sm uppercase font-bold mb-1">Call Us</h4> */}
+                <h4 className="text-sm uppercase font-bold mb-1">
+                  Hubungi Kami
+                </h4>
+                <a
+                  href="tel:+622122049859"
+                  target="_blank"
+                  className="dark:text-gray-400 text-gray-700 hover:text-sky-500 dark:hover:text-sky-500 transition duration-500 ease-in-out"
+                >
+                  Phone: (+62) 21 2204 9859
+                </a>
+                <br />
+                <a
+                  href="https://api.whatsapp.com/send?phone=6285260062002&text=Hallo%20Mulse!%20saya%20membutuhkan%20bantuan%20terkait%20layanan%20di%20mulse.id"
+                  target="_blank"
+                  className="dark:text-gray-400 text-gray-700 hover:text-sky-500 dark:hover:text-sky-500 transition duration-500 ease-in-out"
+                >
+                  WA: (+62) 852 6006 2002
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactContent;
