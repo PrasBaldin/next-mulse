@@ -124,7 +124,7 @@ export default function ProcurmentPage({ params }: Props) {
               </h3>
             </AnimationFadeIn>
           </div>
-          <div className="service-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="service-content grid grid-cols-2 lg:grid-cols-3 gap-3">
             {procurement.map((procurement, index) => (
               <div key={index} className="h-full">
                 <AnimationFadeIn

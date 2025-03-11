@@ -141,7 +141,7 @@ export default function ConstructionPage({ params }: Props) {
               </h3>
             </AnimationFadeIn>
           </div>
-          <div className="service-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="service-content grid grid-cols-2 lg:grid-cols-3 gap-3">
             {services.map((service, index) => (
               <div key={index} className="h-full">
                 <AnimationFadeIn
@@ -161,7 +161,7 @@ export default function ConstructionPage({ params }: Props) {
                       className="rounded-t"
                     />
                   </div>
-                  <div className="p-4 md:p-8">
+                  <div className="p-8">
                     <div className="text-xl font-semibold pb-3 flex gap-2 items-center">
                       <service.icon />
                       <h4>{service.title}</h4>
