@@ -1,27 +1,25 @@
-import Image from "next/image";
-import MulseSvg from "@/public/img/mulse.svg";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import MulseSvg from "./icons/mulseSvg";
 
 import "./footer.css";
 
 const Footer = () => {
+  const t = useTranslations();
+
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info & Social Media */}
           <div>
             <div className="flex items-center">
-              <Image src={MulseSvg} alt="Mulse Logo" className="w-16" />
+              <MulseSvg />
               <span className="ml-4 font-bold text-xl bg-gradient-to-r from-sky-400 to-sky-200 bg-clip-text text-transparent">
                 PT. MULSE CITRA NUSA
               </span>
             </div>
-            <p className="text-sm">
-              Perusahaan yang mengintegrasikan layanan konstruksi terdepan
-              dengan solusi pengadaan barang berkualitas tinggi untuk setiap
-              kebutuhan Anda.
-            </p>
+            <p className="text-sm">{t("Footer.profile")}</p>
             <div className="flex mt-4 space-x-4">
               <a
                 href="https://www.facebook.com/profile.php?id=61550927165561&ref=ig_profile_ac"
@@ -92,7 +90,7 @@ const Footer = () => {
 
           {/* Kontak */}
           <div>
-            <h2 className="text-lg font-semibold mb-2">Kontak</h2>
+            <h2 className="text-lg font-semibold mb-2">{t("Link.contact")}</h2>
             <div className="w-12 md:w-[30%] rounded h-1 mb-4 bg-gradient-to-r from-sky-400 to-transparent" />
             <table className="space-y-3 text-sm">
               <tbody>
@@ -213,7 +211,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h2 className="text-lg font-semibold mb-2">Menu</h2>
+            <h2 className="text-lg font-semibold mb-2">{t("Footer.menu")}</h2>
             <div className="w-12 md:w-[30%] rounded h-1 mb-4 bg-gradient-to-r from-sky-400 to-transparent" />
             <div className="flex flex-col space-y-2">
               <Link
@@ -251,7 +249,7 @@ const Footer = () => {
                     </g>
                   </g>
                 </svg>
-                Beranda
+                {t("Link.home")}
               </Link>
               <a
                 className="hover:text-sky-400 transition-colors duration-300 flex gap-2 items-center"
@@ -289,7 +287,45 @@ const Footer = () => {
                     </g>
                   </g>
                 </svg>
-                E-Katalog
+                {t("Link.catalog")}
+              </a>
+              <a
+                className="hover:text-sky-400 transition-colors duration-300 flex gap-2 items-center"
+                href="https://katalog.inaproc.id/mulse-citra-nusa"
+                target="_blank"
+              >
+                <svg
+                  className="w-3 h-3"
+                  viewBox="-4.5 0 20 20"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <g
+                    id="Page-1"
+                    stroke="none"
+                    strokeWidth="1"
+                    fill="none"
+                    fillRule="evenodd"
+                  >
+                    <g
+                      id="Dribbble-Light-Preview"
+                      transform="translate(-305.000000, -6679.000000)"
+                      fill="currentColor"
+                    >
+                      <g
+                        id="icons"
+                        transform="translate(56.000000, 160.000000)"
+                      >
+                        <path
+                          d="M249.365851,6538.70769 L249.365851,6538.70769 C249.770764,6539.09744 250.426289,6539.09744 250.830166,6538.70769 L259.393407,6530.44413 C260.202198,6529.66364 260.202198,6528.39747 259.393407,6527.61699 L250.768031,6519.29246 C250.367261,6518.90671 249.720021,6518.90172 249.314072,6519.28247 L249.314072,6519.28247 C248.899839,6519.67121 248.894661,6520.31179 249.302681,6520.70653 L257.196934,6528.32352 C257.601847,6528.71426 257.601847,6529.34685 257.196934,6529.73759 L249.365851,6537.29462 C248.960938,6537.68437 248.960938,6538.31795 249.365851,6538.70769"
+                          id="arrow_right-[#336]"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                {t("Link.inaproc")}
               </a>
               <Link
                 className="hover:text-sky-400 transition-colors duration-300 flex gap-2 items-center"
@@ -326,7 +362,7 @@ const Footer = () => {
                     </g>
                   </g>
                 </svg>
-                Galeri
+                {t("Link.gallery")}
               </Link>
               <Link
                 className="hover:text-sky-400 transition-colors duration-300 flex gap-2 items-center"
@@ -363,51 +399,14 @@ const Footer = () => {
                     </g>
                   </g>
                 </svg>
-                Tentang Kami
-              </Link>
-              <Link
-                className="hover:text-sky-400 transition-colors duration-300 flex gap-2 items-center"
-                href="/contact"
-              >
-                <svg
-                  className="w-3 h-3"
-                  viewBox="-4.5 0 20 20"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <g
-                    id="Page-1"
-                    stroke="none"
-                    strokeWidth="1"
-                    fill="none"
-                    fillRule="evenodd"
-                  >
-                    <g
-                      id="Dribbble-Light-Preview"
-                      transform="translate(-305.000000, -6679.000000)"
-                      fill="currentColor"
-                    >
-                      <g
-                        id="icons"
-                        transform="translate(56.000000, 160.000000)"
-                      >
-                        <path
-                          d="M249.365851,6538.70769 L249.365851,6538.70769 C249.770764,6539.09744 250.426289,6539.09744 250.830166,6538.70769 L259.393407,6530.44413 C260.202198,6529.66364 260.202198,6528.39747 259.393407,6527.61699 L250.768031,6519.29246 C250.367261,6518.90671 249.720021,6518.90172 249.314072,6519.28247 L249.314072,6519.28247 C248.899839,6519.67121 248.894661,6520.31179 249.302681,6520.70653 L257.196934,6528.32352 C257.601847,6528.71426 257.601847,6529.34685 257.196934,6529.73759 L249.365851,6537.29462 C248.960938,6537.68437 248.960938,6538.31795 249.365851,6538.70769"
-                          id="arrow_right-[#336]"
-                        ></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-                Kontak
+                {t("Link.about")}
               </Link>
             </div>
           </div>
 
           {/* Layanan */}
           <div>
-            <h2 className="text-lg font-semibold mb-2">Layanan</h2>
+            <h2 className="text-lg font-semibold mb-2">{t("Link.services")}</h2>
             <div className="w-12 md:w-[30%] rounded h-1 mb-4 bg-gradient-to-r from-sky-400 to-transparent" />
             <div className="flex flex-col space-y-2">
               <Link
@@ -445,7 +444,7 @@ const Footer = () => {
                     </g>
                   </g>
                 </svg>
-                Jasa Kontruksi
+                {t("Link.service.construction")}
               </Link>
               <Link
                 className="hover:text-sky-400 transition-colors duration-300 flex gap-2 items-center"
@@ -482,7 +481,7 @@ const Footer = () => {
                     </g>
                   </g>
                 </svg>
-                Pengadaan Barang
+                {t("Link.service.procurement")}
               </Link>
             </div>
           </div>
@@ -493,7 +492,7 @@ const Footer = () => {
           <Link className="hover:text-sky-400 transition duration-300" href="/">
             PT. MULSE CITRA NUSA
           </Link>
-          . All rights reserved.
+          . {t("Footer.copyright")}
         </div>
       </div>
     </footer>

@@ -2,11 +2,13 @@
 import { useEffect, useRef } from "react";
 import "./hero.css";
 
-import IconStar from "@/app/_assets/icon/iconStar";
-import IconTeam from "@/app/_assets/icon/iconTeam";
-import IconThumbUp from "@/app/_assets/icon/iconThumbUp";
+import IconStar from "./icons/iconStar";
+import IconTeam from "./icons/iconTeam";
+import IconThumbUp from "./icons/iconThumbUp";
+import { useTranslations } from "next-intl";
 
 const HeroBenefitSection = () => {
+  const t = useTranslations("Benefit");
   const translateThreshold = 350;
   const benefitRef1 = useRef<HTMLDivElement>(null);
   const benefitRef2 = useRef<HTMLDivElement>(null);
@@ -27,7 +29,8 @@ const HeroBenefitSection = () => {
           benefitRefs.forEach((ref, index) => {
             if (ref.current) {
               const initialTranslate = 1000 * (index + 1);
-              const translateX = -initialTranslate + initialTranslate * progress;
+              const translateX =
+                -initialTranslate + initialTranslate * progress;
               ref.current.style.transform = `translateX(${translateX}px)`;
             }
           });
@@ -46,23 +49,20 @@ const HeroBenefitSection = () => {
   const benefitData = [
     {
       class: "bg-sky-400 dark:bg-sky-800 duration-300 z-[4]",
-      title: "100% Quality",
-      description:
-        "Dengan melalui serangkaian proses kontrol kualitas yang ketat, kami memastikan setiap detail diperhatikan demi kepuasan Anda.",
+      title: t("1.title"),
+      description: t("1.desc"),
       Icon: IconStar,
     },
     {
       class: "bg-sky-300 dark:bg-sky-700 duration-500 z-[3]",
-      title: "Qualified Team",
-      description:
-        "Dengan kombinasi pengetahuan yang mendalam dan dedikasi tinggi, kami siap memberikan solusi terbaik untuk kebutuhan Anda.",
+      title: t("2.title"),
+      description: t("2.desc"),
       Icon: IconTeam,
     },
     {
       class: "bg-sky-200 dark:bg-sky-600 duration-700 z-[2]",
-      title: "Guaranteed",
-      description:
-        "Jika Anda merasa tidak puas, kami siap memberikan solusi atau pengembalian dana sesuai ketentuan yang berlaku.",
+      title: t("3.title"),
+      description: t("3.desc"),
       Icon: IconThumbUp,
     },
   ];
@@ -75,7 +75,12 @@ const HeroBenefitSection = () => {
           const IconComponent = benefitData[index].Icon;
           const initialTranslate = 1000 * (index + 1);
           return (
-            <div key={index} ref={ref} className={`benefit-card ${benefitData[index].class}`} style={{ transform: `translateX(-${initialTranslate}px)` }}>
+            <div
+              key={index}
+              ref={ref}
+              className={`benefit-card ${benefitData[index].class}`}
+              style={{ transform: `translateX(-${initialTranslate}px)` }}
+            >
               <div className="flex md:block lg:flex items-center">
                 <div className="text-center mb-4 px-[2rem]">
                   <IconComponent />
@@ -93,8 +98,8 @@ const HeroBenefitSection = () => {
           );
         })}
       </div>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default HeroBenefitSection
+export default HeroBenefitSection;

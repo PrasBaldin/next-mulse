@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import LoaderImage from "./loaderImage";
 
 interface ModalProps {
   currentIndex: number | null;
@@ -37,6 +38,7 @@ const ModalLightbox: React.FC<ModalProps> = ({
         </button>
         {/* Gambar yang ditampilkan */}
         <Image
+          loader={LoaderImage}
           src={galleryItems[currentIndex].img}
           alt={galleryItems[currentIndex].title}
           width={1200}

@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
-import MulseSvg from "@/public/img/mulse.svg";
+import MulseSvg from "./icons/mulseSvg";
 import "./navbar.css";
 
-// import ToggleLanguage from "./toggleLanguage";
+import ToggleLanguage from "./toggleLanguage";
 import ToggleDarkMode from "./toggleDarkMode";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
+  const t = useTranslations("Link");
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -85,7 +86,7 @@ const Navbar = () => {
               </a>
             </div>
             <div className="utility-content">
-              {/* <ToggleLanguage /> */}
+              <ToggleLanguage />
               <ToggleDarkMode />
             </div>
           </div>
@@ -98,13 +99,14 @@ const Navbar = () => {
               href="/"
               className="text-2xl font-bold text-sky-500 dark:text-gray-100 flex items-center transition duration-500 ease-in-out py-3"
             >
-              <Image src={MulseSvg} alt="img" className="w-12 mr-4" />
+              {/* <Image src={MulseSvg} alt="img" className="w-12 mr-4" /> */}
+              <MulseSvg />
               Mulse Citra Nusa
             </Link>
 
             <div className="hidden lg:flex space-x-6 items-center">
               <Link href="/" className="nav-link">
-                Beranda
+                {t("home")}
               </Link>
 
               <div
@@ -114,7 +116,7 @@ const Navbar = () => {
               >
                 <Link href="/services">
                   <button className="nav-link flex items-center">
-                    Layanan
+                    {t("services")}
                   </button>
                 </Link>
                 <div
@@ -125,34 +127,41 @@ const Navbar = () => {
                   }`}
                 >
                   <Link
-                    href="/services/procurement"
-                    className="nav-link-dropdown"
-                  >
-                    Pengadaan Barang
-                  </Link>
-                  <Link
                     href="/services/construction"
                     className="nav-link-dropdown"
                   >
-                    Jasa Konstruksi
+                    {t("service.construction")}
+                  </Link>
+                  <Link
+                    href="/services/procurement"
+                    className="nav-link-dropdown"
+                  >
+                    {t("service.procurement")}
                   </Link>
                 </div>
               </div>
+              <a
+                href="https://katalog.mulse.id"
+                target="_blank"
+                className="nav-link"
+              >
+                {t("catalog")}
+              </a>
               <a
                 href="https://katalog.inaproc.id/mulse-citra-nusa"
                 target="_blank"
                 className="nav-link"
               >
-                E-Katalog
+                {t("inaproc")}
               </a>
               <Link href="/gallery" className="nav-link">
-                Galeri
+                {t("gallery")}
               </Link>
               <Link href="/about" className="nav-link">
-                Tentang Kami
+                {t("about")}
               </Link>
               <Link href="/contact" className="nav-link">
-                Kontak
+                {t("contact")}
               </Link>
             </div>
 
@@ -194,7 +203,7 @@ const Navbar = () => {
 
       {/* Sidebar Menu */}
       <div
-        className={`bg-white dark:bg-gray-800 lg:hidden fixed right-0 w-64 h-full shadow-lg transform transition-transform duration-500 ease-in-out z-10 ${
+        className={`bg-white dark:bg-gray-800 lg:hidden fixed top-0 right-0 w-64 h-full shadow-lg transform transition-transform duration-500 ease-in-out z-10 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -204,75 +213,84 @@ const Navbar = () => {
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Beranda
+            {t("home")}
           </Link>
 
           <div>
             <button
-              className="nav-link-mobile flex items-center w-full"
+              className="nav-link-mobile flex items-center w-full relative"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
-              Layanan
+              {t("services")}
               <span
                 className={`dropdown-arrow ${
                   isDropdownOpen
-                    ? "rotate-45 absolute right-9 mb-2"
-                    : "-rotate-45 absolute right-9"
+                    ? "rotate-45 absolute right-2 -translate-y-1"
+                    : "-rotate-45 absolute right-2"
                 }`}
               ></span>
             </button>
             <div
-              className={`bg-white dark:bg-gray-800 ml-4 space-y-2 rounded-lg overflow-hidden transition-all duration-500 ease-in-out ${
+              className={`bg-white dark:bg-gray-800 space-y-2 rounded-lg overflow-hidden transition-all duration-500 ease-in-out ${
                 isDropdownOpen
                   ? "max-h-[500px] opacity-100 p-2 mt-2"
                   : "max-h-0 opacity-0 p-0 mt-0"
               }`}
             >
               <Link
-                href="/services/procurement"
-                className="nav-link-mobile block"
-                onClick={() => setIsOpen(false)}
-              >
-                Pengadaan Barang
-              </Link>
-              <Link
                 href="/services/construction"
                 className="nav-link-mobile block"
                 onClick={() => setIsOpen(false)}
               >
-                Jasa Konstruksi
+                {t("service.construction")}
+              </Link>
+              <Link
+                href="/services/procurement"
+                className="nav-link-mobile block"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("service.procurement")}
               </Link>
             </div>
           </div>
-          <Link
+          <a
             href="https://katalog.mulse.id"
+            target="_blank"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            E-Katalog
-          </Link>
+            {t("catalog")}
+          </a>
+          <a
+            href="https://katalog.inaproc.id/mulse-citra-nusa"
+            target="_blank"
+            className="nav-link-mobile"
+            onClick={() => setIsOpen(false)}
+          >
+            {t("inaproc")}
+          </a>
           <Link
             href="/gallery"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Galeri
+            {t("gallery")}
           </Link>
           <Link
             href="/about"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Tentang Kami
+            {t("about")}
           </Link>
           <Link
             href="/contact"
             className="nav-link-mobile"
             onClick={() => setIsOpen(false)}
           >
-            Kontak
+            {t("contact")}
           </Link>
-          {/* <ToggleLanguage /> */}
+          <ToggleLanguage />
           <ToggleDarkMode />
         </div>
       </div>

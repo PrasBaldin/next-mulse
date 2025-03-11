@@ -1,15 +1,22 @@
 "use client";
 import { useState, useEffect } from "react";
-import IconDarkMode from "../app/_assets/icon/iconDarkmode";
-import IconLightMode from "../app/_assets/icon/iconLightmode";
+import { useTranslations } from "next-intl";
+import IconDarkMode from "./icons/iconTheme/iconDarkMode";
+import IconLightMode from "./icons/iconTheme/iconLightMode";
 
 import "./toggleDarkMode.css";
 
 const ToggleDarkMode = () => {
+  const t = useTranslations("Theme");
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Check the theme from localStorage in a useEffect hook to ensure it's client-side
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    setIsDarkMode(storedTheme === "dark");
+    if (storedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
   }, []);
 
   useEffect(() => {
@@ -44,7 +51,7 @@ const ToggleDarkMode = () => {
                 isDarkMode ? "opacity-100" : "opacity-0"
               }`}
             >
-              Light Mode
+              {t("lightMode")}
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -60,7 +67,7 @@ const ToggleDarkMode = () => {
                 isDarkMode ? "opacity-0" : "opacity-100"
               }`}
             >
-              Night Mode
+              {t("darkMode")}
             </span>
           </div>
         </div>

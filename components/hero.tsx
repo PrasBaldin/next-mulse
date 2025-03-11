@@ -2,10 +2,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./hero.css";
 import HeroBenefitSection from "./heroBenefitSection";
-import Typewriter from "./animationTypewriter";
+import Typewriter from "./animation/animationTypewriter";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("Hero");
   const parallaxRef = useRef<HTMLDivElement>(null);
   const images = ["/img/parallax-1.webp", "/img/parallax-2.webp"];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,14 +16,12 @@ export default function Hero() {
   // Data konten slide sesuai gambar
   const slideContent = [
     {
-      title: "   Jasa Kontruksi",
-      description:
-        "   Solusi konstruksi berkualitas yang memenuhi standar industri terbaik, didukung oleh tim profesional berpengalaman yang menangani proyek-proyek besar.",
+      title: `  ${t("slideContent.construction.title")}`,
+      description: `  ${t("slideContent.construction.desc")}`,
     },
     {
-      title: "   Pengadaan Barang",
-      description:
-        "   Layanan pengadaan barang yang efisien dan terpercaya, memastikan kualitas produk serta memenuhi kebutuhan bisnis Anda dengan harga yang kompetitif.",
+      title: `  ${t("slideContent.procurement.title")}`,
+      description: `  ${t("slideContent.procurement.desc")}`,
     },
   ];
 
@@ -101,8 +101,8 @@ export default function Hero() {
           </div>
         </div>
         <div className="container">
-          <div className="p-3 w-full md:w-[60vw] lg:w-[50vw] xl:w-[45vw] absolute top-[35vh] max-lg:left-0 max-lg:right-0 text-gray-100 transition duration-300 ease-in-out">
-            <div className="py-5">
+          <div className="p-3 w-full md:w-[60vw] lg:w-[50vw] xl:w-[45vw] absolute top-[25vh] md:top-[30vh] lg:top-[35vh] max-lg:left-0 max-lg:right-0 text-gray-100 transition duration-300 ease-in-out">
+            <div className="py-5 pl-2 md:pl-5 lg:pl-0">
               <h3 className="text-xl lg:text-2xl font-semibold pb-2 tracking-[.05em]">
                 PT. Mulse Citra Nusa
               </h3>
@@ -122,17 +122,14 @@ export default function Hero() {
                 />
               </p>
               <div className="pt-5">
-                <a
-                  href="https://katalog.inaproc.id/mulse-citra-nusa"
-                  target="_blank"
-                >
+                <a href="https://katalog.mulse.id" target="_blank">
                   <button className="btn btn-primary font-medium">
-                    E-Katalog
+                    {t("catalog")}
                   </button>
                 </a>
                 <Link href="/gallery">
                   <button className="btn btn-secondary ml-3">
-                    Lihat Galeri
+                    {t("gallery")}
                   </button>
                 </Link>
               </div>
