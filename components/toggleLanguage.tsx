@@ -8,31 +8,63 @@ import IconID from "./icons/iconLanguage/iconID";
 
 import "./toggleLanguage.css";
 import { useTranslations } from "next-intl";
-import { getTranslatedPath, Locale } from "@/i18n/routing";
+import { Locale } from "@/i18n/routing";
 
 const ToggleLanguage = () => {
   const t = useTranslations("Theme");
   const pathname = usePathname();
 
-  // Dapatkan prefix dari URL, default ke "en" jika tidak ada
-  const currentLocale = pathname.split("/")[1] || "en";
+  // Daftar locale yang valid
+  const localesArray = ["en", "id"];
+
+  // Pecah pathname menjadi segmen (contoh: "/next-mulse/en/about" → ["next-mulse", "en", "about"])
+  const segments = pathname.split("/").filter(Boolean);
+
+  // Cari index segmen yang merupakan locale
+  const localeIndex = segments.findIndex((seg) => localesArray.includes(seg));
+
+  let currentLocale: string, basePath: string, remainingPath: string;
+  if (segments.length === 0 || localeIndex === -1) {
+    // Jika tidak ada segmen atau locale tidak ditemukan, asumsikan default "en"
+    currentLocale = "en";
+    basePath = "";
+    remainingPath = "/";
+  } else {
+    currentLocale = segments[localeIndex];
+    // Base path adalah segmen sebelum locale (jika ada)
+    basePath =
+      segments.slice(0, localeIndex).length > 0
+        ? `/${segments.slice(0, localeIndex).join("/")}`
+        : "";
+    // Sisa path setelah locale (misalnya, "/about")
+    remainingPath =
+      segments.slice(localeIndex + 1).length > 0
+        ? `/${segments.slice(localeIndex + 1).join("/")}`
+        : "";
+  }
+
   const [isEnglish, setIsEnglish] = useState(currentLocale === "en");
 
-  // Update state jika URL berubah
+  // Update state ketika pathname berubah
   useEffect(() => {
-    const localeFromUrl = pathname.split("/")[1] || "en";
-    setIsEnglish(localeFromUrl === "en");
+    const newSegments = pathname.split("/").filter(Boolean);
+    const newLocaleIndex = newSegments.findIndex((seg) =>
+      localesArray.includes(seg)
+    );
+    const newCurrentLocale =
+      newLocaleIndex === -1 ? "en" : newSegments[newLocaleIndex];
+    setIsEnglish(newCurrentLocale === "en");
   }, [pathname]);
 
   useEffect(() => {
     localStorage.setItem("language", isEnglish ? "en" : "id");
   }, [isEnglish]);
 
-  // Remove the locale prefix from the pathname to form a clean URL
-  const pathWithoutLocale = pathname.replace(/^\/(en|id)/, "") || "/";
-  // Toggle to the other locale
+  // Locale tujuan: jika sekarang "en", toggle ke "id" dan sebaliknya
   const newLocale: Locale = isEnglish ? "id" : "en";
-  const newPath = getTranslatedPath(pathWithoutLocale, newLocale);
+
+  // Rekonstruksi URL baru tanpa menyertakan locale (karena akan ditambahkan oleh properti locale di Link)
+  const newPath = `${basePath || ""}${remainingPath}`;
 
   return (
     <>
