@@ -1,14 +1,13 @@
-// import { routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 
-// export function generateStaticParams() {
-//   return routing.locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-import { Link } from "@/i18n/navigation";
+import { Link } from "@/i18n//navigation";
+import ContactContent from "./contactContent";
 import Typewriter from "@/components/animation/animationTypewriter";
 import { useTranslations } from "next-intl";
-
-import GalleryContent from "./galleryContent";
 // import { setRequestLocale } from "next-intl/server";
 // import { use } from "react";
 
@@ -16,15 +15,15 @@ import GalleryContent from "./galleryContent";
 //   params: Promise<{ locale: string }>;
 // };
 
-export default function GalleryPage() {
-  // export default function GalleryPage({ params }: Props) {
-  //   const { locale } = use(params);
+export default function ContactPage() {
+  // export default function ContactPage({ params }: Props) {
+  // const { locale } = use(params);
 
   // Enable static rendering
   // setRequestLocale(locale);
 
-  const tLink = useTranslations("Link");
-  const typewriterText = `   ${tLink("gallery")}`;
+  const t = useTranslations("Link");
+  const typewriterText = `   ${t("contact")}`;
 
   return (
     <>
@@ -43,15 +42,15 @@ export default function GalleryPage() {
                     href="/"
                     className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out"
                   >
-                    {tLink("home")}
+                    {t("home")}
                   </Link>
                 </li>
                 <li className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out">
                   /
                 </li>
                 <li>
-                  <Link href="/gallery" className="text-sky-500">
-                    {tLink("gallery")}
+                  <Link href="/contact" className="text-sky-500">
+                    {t("contact")}
                   </Link>
                 </li>
               </ul>
@@ -59,7 +58,7 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
-      <GalleryContent />
+      <ContactContent />
     </>
   );
 }

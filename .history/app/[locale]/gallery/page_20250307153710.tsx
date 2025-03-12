@@ -1,27 +1,26 @@
-// import { routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 
-// export function generateStaticParams() {
-//   return routing.locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 import { Link } from "@/i18n/navigation";
 import Typewriter from "@/components/animation/animationTypewriter";
 import { useTranslations } from "next-intl";
 
 import GalleryContent from "./galleryContent";
-// import { setRequestLocale } from "next-intl/server";
-// import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-// type Props = {
-//   params: Promise<{ locale: string }>;
-// };
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-export default function GalleryPage() {
-  // export default function GalleryPage({ params }: Props) {
-  //   const { locale } = use(params);
+export default function GalleryPage({ params }: Props) {
+  const { locale } = use(params);
 
   // Enable static rendering
-  // setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const tLink = useTranslations("Link");
   const typewriterText = `   ${tLink("gallery")}`;

@@ -1,30 +1,30 @@
-// import { routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 
-// export function generateStaticParams() {
-//   return routing.locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 import { Link } from "@/i18n/navigation";
+import AboutContent from "./aboutContent";
+import VisiMisi from "./visiMisi";
+import ClientPartner from "./clientPartner";
 import Typewriter from "@/components/animation/animationTypewriter";
 import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-import GalleryContent from "./galleryContent";
-// import { setRequestLocale } from "next-intl/server";
-// import { use } from "react";
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-// type Props = {
-//   params: Promise<{ locale: string }>;
-// };
-
-export default function GalleryPage() {
-  // export default function GalleryPage({ params }: Props) {
-  //   const { locale } = use(params);
+export default function AboutPage({ params }: Props) {
+  const { locale } = use(params);
 
   // Enable static rendering
-  // setRequestLocale(locale);
+  setRequestLocale(locale);
 
-  const tLink = useTranslations("Link");
-  const typewriterText = `   ${tLink("gallery")}`;
+  const t = useTranslations("Link");
+  const typewriterText = `   ${t("about")}`;
 
   return (
     <>
@@ -43,15 +43,15 @@ export default function GalleryPage() {
                     href="/"
                     className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out"
                   >
-                    {tLink("home")}
+                    {t("home")}
                   </Link>
                 </li>
                 <li className="text-gray-900 dark:text-gray-100 transition duration-500 ease-in-out">
                   /
                 </li>
                 <li>
-                  <Link href="/gallery" className="text-sky-500">
-                    {tLink("gallery")}
+                  <Link href="/about" className="text-sky-500">
+                    {t("about")}
                   </Link>
                 </li>
               </ul>
@@ -59,7 +59,17 @@ export default function GalleryPage() {
           </div>
         </div>
       </section>
-      <GalleryContent />
+      <section className="relative py-20">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/img/about-bg-1.webp')" }}
+        >
+          <div className="about-mask absolute inset-0 bg-white bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-90 transition duration-500 ease-in-out" />
+        </div>
+        <AboutContent />
+        <VisiMisi />
+      </section>
+      <ClientPartner />
     </>
   );
 }

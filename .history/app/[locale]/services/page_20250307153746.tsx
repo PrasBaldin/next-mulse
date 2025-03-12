@@ -1,8 +1,8 @@
-// import { routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 
-// export function generateStaticParams() {
-//   return routing.locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 import { Link } from "@/i18n/navigation";
 import ServicesContent from "./servicesContent";
@@ -14,19 +14,18 @@ import IconTeam from "@/components/icons/iconTeam";
 import IconThumbUp from "@/components/icons/iconThumbUp";
 import AnimationFadeIn from "@/components/animation/animationFadeIn";
 import { useTranslations } from "next-intl";
-// import { setRequestLocale } from "next-intl/server";
-// import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
-// type Props = {
-//   params: Promise<{ locale: string }>;
-// };
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-export default function ServicesPage() {
-  // export default function ServicesPage({ params }: Props) {
-  // const { locale } = use(params);
+export default function ServicesPage({ params }: Props) {
+  const { locale } = use(params);
 
   // Enable static rendering
-  // setRequestLocale(locale);
+  setRequestLocale(locale);
 
   const tLink = useTranslations("Link");
   const t = useTranslations("Services");

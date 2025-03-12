@@ -1,8 +1,8 @@
-// import { routing } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 
-// export function generateStaticParams() {
-//   return routing.locales.map((locale) => ({ locale }));
-// }
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 import { Link } from "@/i18n/navigation";
 import ServicesContent from "./servicesContent";
