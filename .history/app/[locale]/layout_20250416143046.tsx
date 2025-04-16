@@ -13,7 +13,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import GoogleTags from "@/components/googleTags";
-import { UseEdge } from "./useEdge";
+import { headers } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,20 +57,23 @@ export default async function LocaleLayout({ children, params }: Props) {
   // Enable static rendering
   setRequestLocale(locale);
 
+  const userAgent = (await headers()).get("user-agent") || "";
+  const isEdge = userAgent.includes("Edg");
+
   return (
     <html lang={locale}>
       <head>
         <GoogleTags />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${
+          isEdge ? "edge" : "not-edge"
+        }`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <UseEdge>
-            <Navbar />
-            {children}
-            <Footer />
-          </UseEdge>
+          <Navbar />
+          {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

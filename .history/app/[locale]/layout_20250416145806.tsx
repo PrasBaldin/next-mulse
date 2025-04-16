@@ -13,7 +13,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import GoogleTags from "@/components/googleTags";
-import { UseEdge } from "./useEdge";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,14 +62,12 @@ export default async function LocaleLayout({ children, params }: Props) {
         <GoogleTags />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <UseEdge>
-            <Navbar />
-            {children}
-            <Footer />
-          </UseEdge>
+          <Navbar />
+          {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -13,7 +13,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import GoogleTags from "@/components/googleTags";
-import { UseEdge } from "./useEdge";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

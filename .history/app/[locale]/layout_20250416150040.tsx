@@ -63,14 +63,12 @@ export default async function LocaleLayout({ children, params }: Props) {
         <GoogleTags />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${UseEdge}`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <UseEdge>
-            <Navbar />
-            {children}
-            <Footer />
-          </UseEdge>
+          <Navbar />
+          {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
