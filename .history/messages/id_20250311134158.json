@@ -1,0 +1,185 @@
+{
+  "Metadata": {
+    "title": "Mulse Citra Nusa",
+    "desc": "Selamat datang di PT. Mulse Citra Nusa, kami menyediakan barang dan jasa sesuai kebutuhan Anda."
+  },
+  "Theme": {
+    "darkMode": "Mode Gelap",
+    "lightMode": "Mode Terang",
+    "changeLang": "Ubah Bahasa"
+  },
+  "Link": {
+    "home": "Beranda",
+    "services": "Layanan",
+    "catalog": "Katalog",
+    "inaproc": "Inaproc",
+    "gallery": "Galeri",
+    "about": "Tentang Kami",
+    "contact": "Kontak",
+    "changeLang": "Ubah bahasa",
+    "lightMode": "Mode terang",
+    "darkMode": "Mode gelap",
+    "service": {
+      "construction": "Jasa Konstruksi",
+      "procurement": "Pengadaan Barang"
+    }
+  },
+  "Hero": {
+    "slideContent": {
+      "procurement": {
+        "title": "Jasa Konstruksi",
+        "desc": "Solusi konstruksi berkualitas yang memenuhi standar industri terbaik, didukung oleh tim profesional berpengalaman yang menangani proyek-proyek besar."
+      },
+      "construction": {
+        "title": "Pengadaan Barang",
+        "desc": "Layanan pengadaan barang yang efisien dan tepercaya, memastikan kualitas produk serta memenuhi kebutuhan bisnis Anda dengan harga yang kompetitif."
+      }
+    },
+    "catalog": "Lihat Katalog",
+    "gallery": "Lihat Galeri"
+  },
+  "Benefit": {
+    "1": {
+      "title": "Kualitas 100%",
+      "desc": "Dengan melalui serangkaian proses kontrol kualitas yang ketat, kami memastikan setiap detail diperhatikan demi kepuasan Anda."
+    },
+    "2": {
+      "title": "Tim Profesional",
+      "desc": "Dengan kombinasi pengetahuan yang mendalam dan dedikasi tinggi, kami siap memberikan solusi terbaik untuk kebutuhan Anda."
+    },
+    "3": {
+      "title": "Bergaransi",
+      "desc": "Jika Anda merasa tidak puas, kami siap memberikan solusi dan garansi sesuai ketentuan yang berlaku."
+    }
+  },
+  "About": {
+    "title": "Siapa Kita",
+    "subtitle": "Solusi Konstruksi & Pengadaan Barang",
+    "desc": {
+      "1": "Kami adalah perusahaan yang mengintegrasikan layanan konstruksi terdepan dengan solusi pengadaan barang berkualitas tinggi untuk setiap proyek Anda.",
+      "2": "Didirikan sejak tahun 2017, perusahaan kami telah tumbuh secara konsisten dengan semangat inovasi dan dedikasi tinggi terhadap kualitas. Kami terus mengembangkan layanan serta solusi terbaik guna memenuhi kebutuhan pasar yang dinamis dalam industri konstruksi dan pengadaan barang.",
+      "3": "Dengan dukungan tim profesional dan komitmen untuk memberikan hasil optimal, kami optimis bahwa perjalanan pertumbuhan kami akan terus berlanjut, membuka peluang baru dan menetapkan standar keunggulan di masa depan."
+    },
+    "visiMisi": {
+      "title": "Visi & Misi",
+      "vision": {
+        "title": "Visi",
+        "desc": "Menjadi mitra tepercaya dalam setiap proyek dengan mengutamakan profesionalisme, inovasi, dan kepuasan klien."
+      },
+      "mission": {
+        "title": "Misi",
+        "desc": {
+          "1": "Pelayanan konstruksi berkualitas tinggi",
+          "2": "Pengadaan barang andal dan tepat waktu",
+          "3": "Komitmen terhadap inovasi dan kepuasan klien"
+        }
+      }
+    },
+    "clientPartner": {
+      "title": "Klien & Mitra",
+      "subtitle": "Menanamkan kepercayaan antar sesama"
+    }
+  },
+  "Gallery": {
+    "title": "Proyek",
+    "subtitle": "Hasil kerja kami yang telah selesai",
+    "recentWork": {
+      "title": "Pekerjaan Terbaru",
+      "subtitle": "Lihat beberapa pekerjaan terbaru kami"
+    }
+  },
+  "Contact": {
+    "title": "Kontak Kami",
+    "subtitle": "Mulai proyek baru dengan kami",
+    "contactInfo": {
+      "title": "Info Kontak",
+      "location": "Lokasi Kami",
+      "email": "Email Kami",
+      "call": "Hubungi Kami"
+    },
+    "message": {
+      "title": "Kirim Pesan",
+      "name": "Nama",
+      "email": "Email",
+      "subject": "Subjek",
+      "messages": "Pesan",
+      "submit": "Kirim"
+    }
+  },
+  "Services": {
+    "title": "Kenapa Harus Kami",
+    "subtitle": "Yang akan Anda dapatkan",
+    "ourServices": "Layanan Kami",
+    "viewDetail": "Lihat Selengkapnya",
+    "construction": {
+      "title": "Jasa Konstruksi",
+      "desc": "Kami menghadirkan solusi konstruksi yang menyeluruh dan inovatif untuk memenuhi standar kualitas tertinggi dan disesuaikan dengan kebutuhan spesifik klien",
+      "moreDesc": {
+        "1": "Kami menghadirkan solusi konstruksi yang menyeluruh dan inovatif, mulai dari pembangunan bangunan baru hingga renovasi yang interior dan eksterior. Setiap layanan kami dirancang untuk memenuhi standar kualitas tertinggi dan disesuaikan dengan kebutuhan spesifik klien.",
+        "2": "Layanan kami mencakup desain arsitektur kreatif, konsultasi proyek mendalam, serta penerapan teknologi waterproofing dan electrical engineering terkini. Dengan pendekatan terintegrasi, kami memastikan efisiensi, keamanan, dan keandalan dalam setiap tahap pengerjaan.",
+        "3": "Komitmen kami adalah memberikan hasil yang optimal dengan inovasi, keandalan, dan kepuasan pelanggan sebagai prioritas utama. Percayakan proyek Anda kepada kami dan wujudkan visi konstruksi yang berkualitas dan berkelas."
+      },
+      "content": {
+        "1": {
+          "title": "Konstruksi Bangunan",
+          "desc": "Menyediakan solusi konstruksi bangunan yang inovatif dan berkualitas tinggi untuk berbagai proyek."
+        },
+        "2": {
+          "title": "Renovasi & Perbaikan",
+          "desc": "Layanan renovasi dan perbaikan bangunan dengan pendekatan profesional dan efisien untuk meningkatkan nilai properti Anda."
+        },
+        "3": {
+          "title": "Desain Arsitektur",
+          "desc": "Menyediakan layanan desain arsitektur kreatif dan inovatif untuk menciptakan bangunan yang unik dan fungsional."
+        },
+        "4": {
+          "title": "Konsultasi Proyek",
+          "desc": "Menawarkan konsultasi menyeluruh untuk memastikan setiap tahap proyek berjalan dengan lancar dan tepat sasaran."
+        },
+        "5": {
+          "title": "Waterproofing",
+          "desc": "Menyediakan solusi waterproofing yang handal dan tahan lama untuk melindungi bangunan dari kebocoran serta kerusakan akibat kelembapan."
+        },
+        "6": {
+          "title": "Electrical Engineering",
+          "desc": "Menyediakan layanan perancangan dan instalasi sistem kelistrikan yang aman, efisien, dan sesuai standar untuk mendukung infrastruktur modern."
+        }
+      },
+      "call": "Hubungi Kami"
+    },
+    "procurement": {
+      "title": "Pengadaan Barang",
+      "desc": "Kami menyediakan berbagai kebutuhan barang untuk mendukung operasional bisnis dan organisasi Anda",
+      "moreDesc": {
+        "1": "Kami menyediakan berbagai kebutuhan barang untuk mendukung operasional bisnis dan organisasi Anda, mulai dari alat kantor, perlengkapan medis, hingga elektronik dan souvenir.",
+        "2": "Temukan produk berkualitas dengan layanan terbaik dari kami."
+      },
+      "content": {
+        "1": {
+          "title": "Alat Perlengkapan Kantor"
+        },
+        "2": {
+          "title": "Alat Kesehatan"
+        },
+        "3": {
+          "title": "Alat Kebersihan"
+        },
+        "4": {
+          "title": "Alat Elektronik"
+        },
+        "5": {
+          "title": "Seragam dan Pakaian"
+        },
+        "6": {
+          "title": "Souvenir"
+        }
+      },
+      "viewDetail": "Lihat Selengkapnya"
+    }
+  },
+  "Footer": {
+    "profile": "Perusahaan yang mengintegrasikan layanan konstruksi terdepan dan solusi pengadaan barang berkualitas tinggi untuk setiap kebutuhan Anda.",
+    "menu": "Menu",
+    "copyright": "All rights reserved."
+  }
+}

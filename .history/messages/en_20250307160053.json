@@ -1,0 +1,185 @@
+{
+  "Metadata": {
+    "title": "Mulse Citra Nusa",
+    "desc": "Welcome to PT. Mulse Citra Nusa, we provide construction services and high-quality procurement solutions for all your needs."
+  },
+  "Theme": {
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "changeLang": "Change Language"
+  },
+  "Link": {
+    "home": "Home",
+    "services": "Services",
+    "catalog": "Catalog",
+    "inaproc": "Inaproc",
+    "gallery": "Gallery",
+    "about": "About",
+    "contact": "Contact",
+    "changeLanguage": "Change language",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "service": {
+      "construction": "Construction",
+      "procurement": "General Trading"
+    }
+  },
+  "Hero": {
+    "slideContent": {
+      "procurement": {
+        "title": "Construction",
+        "desc": "High-quality construction solutions that meet the highest industry standards, with an experienced professional team handling large-scale projects."
+      },
+      "construction": {
+        "title": "General Trading",
+        "desc": "Efficient and reliable procurement services, ensuring product quality and meeting your business needs at competitive prices."
+      }
+    },
+    "catalog": "View Catalog",
+    "gallery": "View Gallery"
+  },
+  "Benefit": {
+    "1": {
+      "title": "100% Quality",
+      "desc": "Through a series of stringent quality control processes, we ensure every detail is attended to for your satisfaction."
+    },
+    "2": {
+      "title": "Profesional Team",
+      "desc": "With a combination of deep knowledge and high dedication, we are ready to provide the best solutions for your needs."
+    },
+    "3": {
+      "title": "Guaranteed",
+      "desc": "If you are not satisfied, we are prepared to offer solutions or compensation according to the applicable terms."
+    }
+  },
+  "About": {
+    "title": "Who We Are",
+    "subtitle": "Construction and General Trading Solution",
+    "desc": {
+      "1": "We are a company that integrates leading construction services with high-quality procurement solutions for all your projects.",
+      "2": "Since 2017, our company has consistently grown with a spirit of innovation and a strong dedication to quality. We continuously develop top-notch services and solutions to meet the dynamic needs of the market in the construction and procurement industry.",
+      "3": "With the support of a professional team and a commitment to delivering optimal results, we are optimistic that our growth journey will continue, opening new opportunities and setting standards of excellence for the future."
+    },
+    "visiMisi": {
+      "title": "Vision & Mission",
+      "vision": {
+        "title": "Vision",
+        "desc": "Becoming a trusted partner in every project by prioritizing professionalism, innovation, and client satisfaction."
+      },
+      "mission": {
+        "title": "Misi",
+        "desc": {
+          "1": "High-quality construction services",
+          "2": "Reliable and timely procurement of goods",
+          "3": "Commitment to innovation and client satisfaction"
+        }
+      }
+    },
+    "clientPartner": {
+      "title": "Client & Partner",
+      "subtitle": "Promoting trust between individuals"
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Get Started on Your Next Project with Us",
+    "contactInfo": {
+      "title": "Contact Info",
+      "location": "Where to Find Us",
+      "email": "Email Us At",
+      "call": "Call Us"
+    },
+    "message": {
+      "title": "Send Message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "messages": "Messages",
+      "submit": "Submit"
+    }
+  },
+  "Gallery": {
+    "title": "Projects",
+    "subtitle": "Our completed work",
+    "recentWork": {
+      "title": "Recent Work",
+      "subtitle": "Check out some of our latest projects"
+    }
+  },
+  "Services": {
+    "title": "Why Choose Us",
+    "subtitle": "What you stand to gain",
+    "ourServices": "Our Services",
+    "viewDetail": "View Detail",
+    "construction": {
+      "title": "Construction",
+      "desc": "We provide comprehensive and innovative construction solutions that adhere to the highest quality standards and are tailored to meet the specific needs of our clients",
+      "moreDesc": {
+        "1": "We provide comprehensive and innovative construction solutions, ranging from new building construction to interior and exterior renovations. Each of our services is designed to meet the highest quality standards and tailored to the specific needs of our clients.",
+        "2": "Our services include creative architectural design, in-depth project consultation, as well as the application of the latest waterproofing and electrical engineering technologies. With an integrated approach, we ensure efficiency, safety, and reliability at every stage of the project.",
+        "3": "Our commitment is to deliver optimal results with innovation, reliability, and customer satisfaction as our top priorities. Entrust your project to us and realize a high-quality and prestigious construction vision."
+      },
+      "content": {
+        "1": {
+          "title": "Building Construction",
+          "desc": "Providing innovative and high-quality construction solutions for various projects."
+        },
+        "2": {
+          "title": "Renovation & Maintenance",
+          "desc": "Building renovation and repair services with a professional and efficient approach to enhance your property's value."
+        },
+        "3": {
+          "title": "Design Architecture",
+          "desc": "Providing creative and innovative architectural design services to create unique and functional buildings."
+        },
+        "4": {
+          "title": "Project Consultant",
+          "desc": "Offering comprehensive consultation to ensure every stage of the project runs smoothly and meets its targets."
+        },
+        "5": {
+          "title": "Waterproofing",
+          "desc": "Providing reliable and durable waterproofing solutions to protect buildings from leaks and moisture damage."
+        },
+        "6": {
+          "title": "Electrical Engineering",
+          "desc": "Providing safe, efficient, and standard-compliant electrical system design and installation services to support modern infrastructure."
+        }
+      },
+      "call": "Call Us"
+    },
+    "procurement": {
+      "title": "General Trading",
+      "desc": "We provide a wide range of goods to support the operations of your business and organization",
+      "moreDesc": {
+        "1": "We provide a wide range of goods to support the operations of your business and organization, including office supplies, medical equipment, electronics, and souvenirs.",
+        "2": "Discover high-quality products with the best services from us."
+      },
+      "content": {
+        "1": {
+          "title": "Office Supplies"
+        },
+        "2": {
+          "title": "Medical Equipment"
+        },
+        "3": {
+          "title": "Cleaning Tools"
+        },
+        "4": {
+          "title": "Electronics"
+        },
+        "5": {
+          "title": "Uniforms and Clothing"
+        },
+        "6": {
+          "title": "Souvenirs"
+        }
+      },
+      "viewDetail": "View Detail"
+    }
+  },
+  "Footer": {
+    "profile": "A company that integrates leading construction services and high-quality procurement solutions for all your needs.",
+    "menu": "Menu",
+    "copyright": "All rights reserved."
+  }
+}
