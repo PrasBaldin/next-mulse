@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import ModalLightbox from "@/components/modalLightbox";
 import AnimationFadeIn from "@/components/animation/animationFadeIn";
 import LoaderImage from "@/components/loaderImage";
 import { useTranslations } from "next-intl";
-import { galleryItems } from "./galleryItems";
+import { galleryItems, GalleryItem } from "./galleryItems";
 
 const GalleryContent = () => {
   const t = useTranslations("Gallery");
@@ -14,7 +14,7 @@ const GalleryContent = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const itemsPerPage = 12;
+  const itemsPerPage = 16;
   const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
 
   const openModal = (index: number) => {
@@ -38,7 +38,7 @@ const GalleryContent = () => {
     setTimeout(() => {
       setCurrentPage(page);
       setIsLoading(false);
-    }, 1000); // simulate loading delay
+    }, 3500); // simulate loading delay
   };
 
   const currentItems = galleryItems.slice(
@@ -86,7 +86,13 @@ const GalleryContent = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                 {currentItems.map((item, index) => (
                   <div key={index} onClick={() => openModal(index)}>
-                    <div className="shadow-md overflow-hidden relative group cursor-pointer">
+                    <div
+                      className="shadow-md overflow-hidden relative group cursor-pointer"
+                      // delay={(index + 1) * 0.01}
+                      duration={0.6}
+                      direction="up"
+                      triggerOnExit
+                    >
                       <Image
                         loader={LoaderImage}
                         src={item.img}

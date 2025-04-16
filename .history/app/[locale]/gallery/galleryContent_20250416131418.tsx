@@ -38,7 +38,7 @@ const GalleryContent = () => {
     setTimeout(() => {
       setCurrentPage(page);
       setIsLoading(false);
-    }, 1000); // simulate loading delay
+    }, 100); // simulate loading delay
   };
 
   const currentItems = galleryItems.slice(

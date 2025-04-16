@@ -14,7 +14,7 @@ const GalleryContent = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const itemsPerPage = 12;
+  const itemsPerPage = 16;
   const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
 
   const openModal = (index: number) => {
@@ -38,7 +38,7 @@ const GalleryContent = () => {
     setTimeout(() => {
       setCurrentPage(page);
       setIsLoading(false);
-    }, 1000); // simulate loading delay
+    }, 3500); // simulate loading delay
   };
 
   const currentItems = galleryItems.slice(
