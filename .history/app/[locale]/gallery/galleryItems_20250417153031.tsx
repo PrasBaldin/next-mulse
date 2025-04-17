@@ -6,21 +6,6 @@ export interface GalleryItem {
 
 export const galleryItems: GalleryItem[] = [
   {
-    img: "/img/gallery-16-1.jpg",
-    category: "Renovasi & Perbaikan",
-    title: "Pembersihan Dinding ACP Gedung",
-  },
-  {
-    img: "/img/gallery-16-2.jpg",
-    category: "Renovasi & Perbaikan",
-    title: "Pembersihan Dinding ACP Gedung",
-  },
-  {
-    img: "/img/gallery-16-3.jpg",
-    category: "Renovasi & Perbaikan",
-    title: "Pembersihan Dinding ACP Gedung",
-  },
-  {
     img: "/img/gallery-15-1.jpg",
     category: "Waterproofing",
     title: "Pekerjaan Coating Balkon Gedung",
@@ -49,21 +34,6 @@ export const galleryItems: GalleryItem[] = [
     img: "/img/gallery-14-3.jpg",
     category: "Renovasi & Perbaikan",
     title: "Perbaikan Kamar Mandi",
-  },
-  {
-    img: "/img/gallery-10-0.jpg",
-    category: "Konstruksi",
-    title: "Pekerjaan Pembuatan Klinik",
-  },
-  {
-    img: "/img/gallery-10-2.jpg",
-    category: "Konstruksi",
-    title: "Pekerjaan Pembuatan Klinik",
-  },
-  {
-    img: "/img/gallery-10-3.jpg",
-    category: "Konstruksi",
-    title: "Pekerjaan Pembuatan Klinik",
   },
   {
     img: "/img/gallery-1-1.jpg",
@@ -174,6 +144,21 @@ export const galleryItems: GalleryItem[] = [
     img: "/img/gallery-9-2.jpg",
     category: "Electrical Engineering",
     title: "Pekerjaan Pemasangan Lampu Sorot",
+  },
+  {
+    img: "/img/gallery-10-1.jpg",
+    category: "Konstruksi",
+    title: "Pekerjaan Pembuatan Klinik",
+  },
+  {
+    img: "/img/gallery-10-2.jpg",
+    category: "Konstruksi",
+    title: "Pekerjaan Pembuatan Klinik",
+  },
+  {
+    img: "/img/gallery-10-3.jpg",
+    category: "Konstruksi",
+    title: "Pekerjaan Pembuatan Klinik",
   },
   {
     img: "/img/gallery-11.jpg",

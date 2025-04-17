@@ -50,6 +50,7 @@ export const galleryItems: GalleryItem[] = [
     category: "Renovasi & Perbaikan",
     title: "Perbaikan Kamar Mandi",
   },
+
   {
     img: "/img/gallery-10-0.jpg",
     category: "Konstruksi",

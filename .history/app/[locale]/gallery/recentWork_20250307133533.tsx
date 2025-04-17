@@ -37,14 +37,14 @@ const RecentWork = () => {
       title: "Pekerjaan Renovasi Interior Kantor",
     },
     {
-      img: "/img/gallery-16-1.jpg",
+      img: "/img/gallery-2-1.jpg",
       category: "Renovasi & Perbaikan",
-      title: "Pembersihan Dinding ACP Gedung",
+      title: "Pekerjaan Renovasi Garasi Rumah",
     },
     {
-      img: "/img/gallery-10-0.jpg",
-      category: "Konstruksi",
-      title: "Pekerjaan Pembangunan Klinik di Area Kantor",
+      img: "/img/gallery-3.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Pemeliharaan Marmer",
     },
     {
       img: "/img/gallery-9-1.jpg",
@@ -52,9 +52,9 @@ const RecentWork = () => {
       title: "Pekerjaan Pemasangan Lampu Sorot",
     },
     {
-      img: "/img/gallery-15-1.jpg",
+      img: "/img/gallery-5-1.jpg",
       category: "Waterproofing",
-      title: "Pekerjaan Coating Balkon Gedung",
+      title: "Pekerjaan Waterproofing Membran",
     },
     {
       img: "/img/gallery-7-1.jpg",

@@ -51,21 +51,6 @@ export const galleryItems: GalleryItem[] = [
     title: "Perbaikan Kamar Mandi",
   },
   {
-    img: "/img/gallery-10-0.jpg",
-    category: "Konstruksi",
-    title: "Pekerjaan Pembuatan Klinik",
-  },
-  {
-    img: "/img/gallery-10-2.jpg",
-    category: "Konstruksi",
-    title: "Pekerjaan Pembuatan Klinik",
-  },
-  {
-    img: "/img/gallery-10-3.jpg",
-    category: "Konstruksi",
-    title: "Pekerjaan Pembuatan Klinik",
-  },
-  {
     img: "/img/gallery-1-1.jpg",
     category: "Renovasi & Perbaikan",
     title: "Pekerjaan Renovasi Interior Kantor",
@@ -174,6 +159,21 @@ export const galleryItems: GalleryItem[] = [
     img: "/img/gallery-9-2.jpg",
     category: "Electrical Engineering",
     title: "Pekerjaan Pemasangan Lampu Sorot",
+  },
+  {
+    img: "/img/gallery-10-1.jpg",
+    category: "Konstruksi",
+    title: "Pekerjaan Pembuatan Klinik",
+  },
+  {
+    img: "/img/gallery-10-2.jpg",
+    category: "Konstruksi",
+    title: "Pekerjaan Pembuatan Klinik",
+  },
+  {
+    img: "/img/gallery-10-3.jpg",
+    category: "Konstruksi",
+    title: "Pekerjaan Pembuatan Klinik",
   },
   {
     img: "/img/gallery-11.jpg",

@@ -44,7 +44,7 @@ const RecentWork = () => {
     {
       img: "/img/gallery-10-0.jpg",
       category: "Konstruksi",
-      title: "Pekerjaan Pembangunan Klinik di Area Kantor",
+      title: "Pekerjaan Pembangunan Klinik Kantor",
     },
     {
       img: "/img/gallery-9-1.jpg",

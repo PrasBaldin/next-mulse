@@ -42,9 +42,9 @@ const RecentWork = () => {
       title: "Pembersihan Dinding ACP Gedung",
     },
     {
-      img: "/img/gallery-10-0.jpg",
-      category: "Konstruksi",
-      title: "Pekerjaan Pembangunan Klinik di Area Kantor",
+      img: "/img/gallery-3.jpg",
+      category: "Renovasi & Perbaikan",
+      title: "Pekerjaan Pemeliharaan Marmer",
     },
     {
       img: "/img/gallery-9-1.jpg",
