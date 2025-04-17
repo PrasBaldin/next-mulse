@@ -69,7 +69,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.tiktok.com/@mulse.group"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Tiktok"
