@@ -312,7 +312,7 @@ const ContactContent: React.FC = () => {
                   triggerOnExit
                 >
                   <h4 className="text-sm uppercase font-bold mb-1">
-                    {"contactInfo.call"}
+                    {t("contactInfo.call")}
                   </h4>
                 </AnimationFadeIn>
                 <AnimationFadeIn
